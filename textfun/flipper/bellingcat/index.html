@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MadMeme - TextFun - 
+	
+	Flipper - bellingcat
+</title>
+	<script src="/jquery-3.5.1.min.js"></script>
+	<link rel="icon" href="/favicon.ico" type="image/png">
+	
+	
+	
+		<link rel="stylesheet" href="/flipper.css">
+	
+	
+		<script src="/flipper.js"></script>
+	
+
+</head>
+
+<body>
+
+
+	
+
+	
+
+	bellingcat
+	<button onclick="prev_card();">Prev!</button>
+	<button onclick="flip_card();">Flip!</button>
+	<button onclick="next_card();">Next!</button>
+
+	<br>
+	<br>
+	<br>
+
+	<center>
+
+	<table width="80%" border="0">
+		<tr>
+			<td align="right" valign="bottom" width="33%">
+
+				<div class="flip-card flip-show-front">
+					<div class="flip-card-inner flip-card-a">
+						<div class="space">
+							<span class="text-a-space"></span></div>
+						<div class="flip-card-deck flip-card-front">
+							<div class="flip-card-rightbot">
+								<span id="text-a-front" class="text-fade ani-fadein"></span></div>
+						</div>
+						<div class="flip-card-deck flip-card-back">
+							<div class="flip-card-rightbot">
+								<div class="flip-card-turned">
+									<span id="text-a-back" class="text-fade ani-fadein"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td align="center" width="33%">
+
+				<div class="flip-card flip-show-front">
+					<div class="flip-card-inner flip-card-b">
+						<div class="space">
+							<span class="text-b-space"></span></div>
+						<div class="flip-card-deck flip-card-front">
+							<span id="text-b-front" class="text-fade ani-fadein"></span></div>
+						<div class="flip-card-deck flip-card-back">
+							<div class="flip-card-turned">
+								<span id="text-b-back" class="text-fade ani-fadein"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td align="left" valign="top" width="33%">
+
+				<div class="flip-card flip-show-front">
+					<div class="flip-card-inner flip-card-c">
+						<div class="space">
+							<span class="text-c-space"></span></div>
+						<div class="flip-card-deck flip-card-front">
+							<span id="text-c-front" class="text-fade ani-fadein"></span></div>
+						<div class="flip-card-deck flip-card-back">
+							<div class="flip-card-turned">
+								<span id="text-c-back" class="text-fade ani-fadein"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</td>
+		</tr>
+	</table>
+
+	</center>
+
+	<script><!--
+		document.flip_num = 0;
+		document.flip_text = [
+		
+			
+				["Belling the #\x3cem\x3eCat\x3c\/em\x3e#", "Belling die #\x3cem\x3eKatze\x3c\/em\x3e#"],
+			
+				["The #\x3cem\x3eMice\x3c\/em\x3e# once called a meeting to decide on a plan to free themselves of their enemy, the Cat", "Die #\x3cem\x3eMäuse\x3c\/em\x3e# beriefen einmal ein Treffen ein, um über einen Plan zu entscheiden, um sich von ihrem Feind, der Katze, zu befreien"],
+			
+				["The \x3cstrong\x3eMice\x3c\/strong\x3e once called a #\x3cem\x3emeeting\x3c\/em\x3e# to decide on a \x3cstrong\x3eplan\x3c\/strong\x3e to free themselves of their enemy, the Cat", "Die \x3cstrong\x3eMäuse\x3c\/strong\x3e beriefen einmal ein #\x3cem\x3eTreffen\x3c\/em\x3e# ein, um über einen \x3cstrong\x3ePlan\x3c\/strong\x3e zu entscheiden, um sich von ihrem Feind, der Katze, zu befreien"],
+			
+				["The Mice once called a \x3cstrong\x3emeeting\x3c\/strong\x3e to decide on a #\x3cem\x3eplan\x3c\/em\x3e# to free themselves of their \x3cstrong\x3eenemy\x3c\/strong\x3e, the Cat", "Die Mäuse beriefen einmal ein \x3cstrong\x3eTreffen\x3c\/strong\x3e ein, um über einen #\x3cem\x3ePlan\x3c\/em\x3e# zu entscheiden, um sich von ihrem \x3cstrong\x3eFeind\x3c\/strong\x3e, der Katze, zu befreien"],
+			
+				["The Mice once called a meeting to decide on a \x3cstrong\x3eplan\x3c\/strong\x3e to free themselves of their #\x3cem\x3eenemy\x3c\/em\x3e#, the \x3cstrong\x3eCat\x3c\/strong\x3e", "Die Mäuse beriefen einmal ein Treffen ein, um über einen \x3cstrong\x3ePlan\x3c\/strong\x3e zu entscheiden, um sich von ihrem #\x3cem\x3eFeind\x3c\/em\x3e#, der \x3cstrong\x3eKatze\x3c\/strong\x3e, zu befreien"],
+			
+				["The Mice once called a meeting to decide on a plan to free themselves of their \x3cstrong\x3eenemy\x3c\/strong\x3e, the #\x3cem\x3eCat\x3c\/em\x3e#", "Die Mäuse beriefen einmal ein Treffen ein, um über einen Plan zu entscheiden, um sich von ihrem \x3cstrong\x3eFeind\x3c\/strong\x3e, der #\x3cem\x3eKatze\x3c\/em\x3e#, zu befreien."],
+			
+				["At least they wished to find some #\x3cem\x3eway\x3c\/em\x3e# of knowing when she was coming, so they might have time to run a\x3cem\x3eway\x3c\/em\x3e", "Zumindest wollten sie einen #\x3cem\x3eWeg\x3c\/em\x3e# finden, um zu wissen, wann sie kommen würde, damit sie Zeit haben könnten, wegzulaufen"],
+			
+				["At least they wished to find some \x3cstrong\x3eway\x3c\/strong\x3e of knowing when she was coming, so they might have #\x3cem\x3etime\x3c\/em\x3e# to run a\x3cstrong\x3eway\x3c\/strong\x3e", "Zumindest wollten sie einen \x3cstrong\x3eWeg\x3c\/strong\x3e finden, um zu wissen, wann sie kommen würde, damit sie #\x3cem\x3eZeit\x3c\/em\x3e# haben könnten, wegzulaufen"],
+			
+				["Indeed, #\x3cem\x3esomething\x3c\/em\x3e# had to be done, for they lived in such constant fear of her claws that they hardly dared stir from their dens by night or day", "In der Tat musste #\x3cem\x3eetwas\x3c\/em\x3e# getan werden, denn sie lebten in solch ständiger Angst vor ihren Krallen, dass sie es kaum wagten, sich Tag und Nacht aus ihren Höhlen zu rühren"],
+			
+				["Indeed, \x3cstrong\x3esomething\x3c\/strong\x3e had to be done, for they lived in #\x3cem\x3esuch\x3c\/em\x3e# \x3cstrong\x3econstant\x3c\/strong\x3e fear of her claws that they hardly dared stir from their dens by night or day", "In der Tat musste \x3cstrong\x3eetwas\x3c\/strong\x3e getan werden, denn sie lebten in #\x3cem\x3eso\x3c\/em\x3e# ständiger Angst vor ihren Krallen, dass sie es kaum wagten, sich Tag und Nacht aus ihren Höhlen zu rühren"],
+			
+				["Indeed, something had to be done, for they lived in \x3cstrong\x3esuch\x3c\/strong\x3e #\x3cem\x3econstant\x3c\/em\x3e# \x3cstrong\x3efear\x3c\/strong\x3e of her claws that they hardly dared stir from their dens by night or day", "In der Tat musste etwas getan werden, denn sie lebten in einer \x3cstrong\x3eso\x3c\/strong\x3elchen #\x3cem\x3eständigen\x3c\/em\x3e# \x3cstrong\x3eAngst\x3c\/strong\x3e vor ihren Krallen, dass sie es kaum wagten, sich Tag und Nacht aus ihren Höhlen zu rühren"],
+			
+				["Indeed, something had to be done, for they lived in such \x3cstrong\x3econstant\x3c\/strong\x3e #\x3cem\x3efear\x3c\/em\x3e# of her \x3cstrong\x3eclaws\x3c\/strong\x3e that they hardly dared stir from their dens by night or day", "In der Tat musste etwas getan werden, denn sie lebten in solch ständiger #\x3cem\x3eAngst\x3c\/em\x3e# vor ihren \x3cstrong\x3eKrallen\x3c\/strong\x3e, dass sie es kaum wagten, sich Tag und Nacht aus ihren Höhlen zu rühren"],
+			
+				["Indeed, something had to be done, for they lived in such constant \x3cstrong\x3efear\x3c\/strong\x3e of her #\x3cem\x3eclaws\x3c\/em\x3e# that they hardly dared \x3cstrong\x3estir\x3c\/strong\x3e from their dens by night or day", "In der Tat musste etwas getan werden, denn sie lebten in solch ständiger \x3cstrong\x3eAngst\x3c\/strong\x3e vor ihren #\x3cem\x3eKrallen\x3c\/em\x3e#, dass sie es kaum wagten, sich Tag und Nacht aus ihren Höhlen zu \x3cstrong\x3erühren\x3c\/strong\x3e"],
+			
+				["Indeed, something had to be done, for they lived in such constant fear of her \x3cstrong\x3eclaws\x3c\/strong\x3e that they hardly dared #\x3cem\x3estir\x3c\/em\x3e# from their \x3cstrong\x3edens\x3c\/strong\x3e by night or day", "In der Tat musste etwas getan werden, denn sie lebten in solch ständiger Angst vor ihren \x3cstrong\x3eKrallen\x3c\/strong\x3e, dass sie es kaum wagten, sich Tag und Nacht aus ihren \x3cstrong\x3eHöhlen\x3c\/strong\x3e zu #\x3cem\x3erühren\x3c\/em\x3e#"],
+			
+				["Indeed, something had to be done, for they lived in such constant fear of her claws that they hardly dared \x3cstrong\x3estir\x3c\/strong\x3e from their #\x3cem\x3edens\x3c\/em\x3e# by \x3cstrong\x3enight\x3c\/strong\x3e or day", "In der Tat musste etwas getan werden, denn sie lebten in solch ständiger Angst vor ihren Krallen, dass sie es kaum wagten, sich Tag und \x3cstrong\x3eNacht\x3c\/strong\x3e aus ihren #\x3cem\x3eHöhlen\x3c\/em\x3e# zu \x3cstrong\x3erühren\x3c\/strong\x3e"],
+			
+				["Indeed, something had to be done, for they lived in such constant fear of her claws that they hardly dared stir from their \x3cstrong\x3edens\x3c\/strong\x3e by #\x3cem\x3enight\x3c\/em\x3e# or \x3cstrong\x3eday\x3c\/strong\x3e", "In der Tat musste etwas getan werden, denn sie lebten in solch ständiger Angst vor ihren Krallen, dass sie es kaum wagten, sich bei #\x3cem\x3eNacht\x3c\/em\x3e# oder \x3cstrong\x3eTag\x3c\/strong\x3e aus ihren \x3cstrong\x3eHöhlen\x3c\/strong\x3e zu rühren"],
+			
+				["Indeed, something had to be done, for they lived in such constant fear of her claws that they hardly dared stir from their dens by \x3cstrong\x3enight\x3c\/strong\x3e or #\x3cem\x3eday\x3c\/em\x3e#", "In der Tat musste etwas getan werden, denn sie lebten in solch ständiger Angst vor ihren Krallen, dass sie es kaum wagten, sich bei \x3cstrong\x3eNacht\x3c\/strong\x3e oder #\x3cem\x3eTag\x3c\/em\x3e# aus ihren Höhlen zu rühren."],
+			
+				["#\x3cem\x3eMany\x3c\/em\x3e# plans were discussed, but none of them was thought good enough", "#\x3cem\x3eViele\x3c\/em\x3e# Pläne wurden diskutiert, aber keiner von ihnen wurde für gut genug gehalten"],
+			
+				["\x3cstrong\x3eMany\x3c\/strong\x3e #\x3cem\x3eplans\x3c\/em\x3e# were discussed, but \x3cstrong\x3enone\x3c\/strong\x3e of them was thought good enough", "\x3cstrong\x3eViele\x3c\/strong\x3e #\x3cem\x3ePläne\x3c\/em\x3e# wurden diskutiert, aber \x3cstrong\x3ekeiner\x3c\/strong\x3e von ihnen wurde für gut genug gehalten"],
+			
+				["Many \x3cstrong\x3eplans\x3c\/strong\x3e were discussed, but #\x3cem\x3enone\x3c\/em\x3e# of them was thought \x3cstrong\x3egood\x3c\/strong\x3e enough", "Viele \x3cstrong\x3ePläne\x3c\/strong\x3e wurden diskutiert, aber #\x3cem\x3ekeiner\x3c\/em\x3e# von ihnen wurde für \x3cstrong\x3egut\x3c\/strong\x3e genug gehalten"],
+			
+				["Many plans were discussed, but \x3cstrong\x3enone\x3c\/strong\x3e of them was thought #\x3cem\x3egood\x3c\/em\x3e# enough", "Viele Pläne wurden diskutiert, aber \x3cstrong\x3ekeiner\x3c\/strong\x3e von ihnen wurde als #\x3cem\x3egut\x3c\/em\x3e# genug angesehen"],
+			
+				["At last a very #\x3cem\x3eyoung\x3c\/em\x3e# Mouse got up and said :", "Endlich stand eine sehr #\x3cem\x3ejunge\x3c\/em\x3e# Maus auf und sagte:"],
+			
+				["At last a very \x3cstrong\x3eyoung\x3c\/strong\x3e #\x3cem\x3eMouse\x3c\/em\x3e# got up and said :", "Endlich stand eine sehr \x3cstrong\x3ejunge\x3c\/strong\x3e #\x3cem\x3eMaus\x3c\/em\x3e# auf und sagte:"],
+			
+				["\x26lsquo;\x26lsquo;I have a #\x3cem\x3eplan\x3c\/em\x3e# that seems very simple, but I know it will be successful. All we have to do is to hang a bell about the Cat\x26rsquo;s neck. When we hear the bell ringing we will know immediately that our enemy is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen #\x3cem\x3ePlan\x3c\/em\x3e#, der sehr einfach zu sein scheint, aber ich weiß, dass er erfolgreich sein wird. Alles was wir tun müssen, ist eine Glocke um den Hals der Katze zu hängen. Wenn wir die Glocke läuten hören, werden wir sofort wissen, dass unser Feind kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a \x3cstrong\x3eplan\x3c\/strong\x3e that seems very #\x3cem\x3esimple\x3c\/em\x3e#, but I know it will be \x3cstrong\x3esuccessful\x3c\/strong\x3e. All we have to do is to hang a bell about the Cat\x26rsquo;s neck. When we hear the bell ringing we will know immediately that our enemy is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen \x3cstrong\x3ePlan\x3c\/strong\x3e, der sehr #\x3cem\x3eeinfach\x3c\/em\x3e# erscheint, aber ich weiß, dass er \x3cstrong\x3eerfolgreich\x3c\/strong\x3e sein wird. Alles was wir tun müssen, ist eine Glocke um den Hals der Katze zu hängen. Wenn wir die Glocke läuten hören, werden wir sofort wissen, dass unser Feind kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a plan that seems very \x3cstrong\x3esimple\x3c\/strong\x3e, but I know it will be #\x3cem\x3esuccessful\x3c\/em\x3e#. All we have to do is to hang a \x3cstrong\x3ebell\x3c\/strong\x3e about the Cat\x26rsquo;s neck. When we hear the \x3cstrong\x3ebell\x3c\/strong\x3e ringing we will know immediately that our enemy is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen Plan, der sehr \x3cstrong\x3eeinfach\x3c\/strong\x3e erscheint, aber ich weiß, dass er #\x3cem\x3eerfolgreich\x3c\/em\x3e# sein wird. Alles was wir tun müssen, ist eine \x3cstrong\x3eGlocke\x3c\/strong\x3e um den Hals der Katze zu hängen. Wenn wir die \x3cstrong\x3eGlocke\x3c\/strong\x3e läuten hören, werden wir sofort wissen, dass unser Feind kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a plan that seems very simple, but I know it will be \x3cstrong\x3esuccessful\x3c\/strong\x3e. All we have to do is to hang a #\x3cem\x3ebell\x3c\/em\x3e# about the \x3cstrong\x3eCat\x3c\/strong\x3e\x26lsquo;s neck. When we hear the \x3cem\x3ebell\x3c\/em\x3e ringing we will know immediately that our enemy is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen Plan, der sehr einfach zu sein scheint, aber ich weiß, dass er \x3cstrong\x3eerfolgreich\x3c\/strong\x3e sein wird. Alles was wir tun müssen, ist eine #\x3cem\x3eGlocke\x3c\/em\x3e# um den Hals der \x3cstrong\x3eKatze\x3c\/strong\x3e zu hängen. Wenn wir die \x3cem\x3eGlocke\x3c\/em\x3e läuten hören, werden wir sofort wissen, dass unser Feind kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a plan that seems very simple, but I know it will be successful. All we have to do is to hang a \x3cstrong\x3ebell\x3c\/strong\x3e about the #\x3cem\x3eCat\x3c\/em\x3e#\x26lsquo;s \x3cstrong\x3eneck\x3c\/strong\x3e. When we hear the \x3cstrong\x3ebell\x3c\/strong\x3e ringing we will know immediately that our enemy is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen Plan, der sehr einfach zu sein scheint, aber ich weiß, dass er erfolgreich sein wird. Alles was wir tun müssen, ist eine \x3cstrong\x3eGlocke\x3c\/strong\x3e um den \x3cstrong\x3eHals\x3c\/strong\x3e der #\x3cem\x3eKatze\x3c\/em\x3e# zu hängen. Wenn wir die \x3cstrong\x3eGlocke\x3c\/strong\x3e läuten hören, werden wir sofort wissen, dass unser Feind kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a plan that seems very simple, but I know it will be successful. All we have to do is to hang a \x3cstrong\x3ebell\x3c\/strong\x3e about the \x3cstrong\x3eCat\x3c\/strong\x3e\x26lsquo;s #\x3cem\x3eneck\x3c\/em\x3e#. When we hear the \x3cstrong\x3ebell\x3c\/strong\x3e ringing we will know immediately that our enemy is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen Plan, der sehr einfach zu sein scheint, aber ich weiß, dass er erfolgreich sein wird. Alles was wir tun müssen, ist eine \x3cstrong\x3eGlocke\x3c\/strong\x3e um den #\x3cem\x3eHals\x3c\/em\x3e# der \x3cstrong\x3eKatze\x3c\/strong\x3e zu hängen. Wenn wir die \x3cstrong\x3eGlocke\x3c\/strong\x3e läuten hören, werden wir sofort wissen, dass unser Feind kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a plan that seems very simple, but I know it will be successful. All we have to do is to hang a \x3cem\x3ebell\x3c\/em\x3e about the Cat\x26rsquo;s \x3cstrong\x3eneck\x3c\/strong\x3e. When we hear the #\x3cem\x3ebell\x3c\/em\x3e# ringing we will know immediately that our \x3cstrong\x3eenemy\x3c\/strong\x3e is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen Plan, der sehr einfach zu sein scheint, aber ich weiß, dass er erfolgreich sein wird. Alles was wir tun müssen, ist eine \x3cem\x3eGlocke\x3c\/em\x3e um den \x3cstrong\x3eHals\x3c\/strong\x3e der Katze zu hängen. Wenn wir die #\x3cem\x3eGlocke\x3c\/em\x3e# läuten hören, werden wir sofort wissen, dass unser \x3cstrong\x3eFeind\x3c\/strong\x3e kommt.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I have a plan that seems very simple, but I know it will be successful. All we have to do is to hang a \x3cstrong\x3ebell\x3c\/strong\x3e about the Cat\x26rsquo;s neck. When we hear the \x3cstrong\x3ebell\x3c\/strong\x3e ringing we will know immediately that our #\x3cem\x3eenemy\x3c\/em\x3e# is coming.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich habe einen Plan, der sehr einfach zu sein scheint, aber ich weiß, dass er erfolgreich sein wird. Alles was wir tun müssen, ist eine \x3cstrong\x3eGlocke\x3c\/strong\x3e um den Hals der Katze zu hängen. Wenn wir die \x3cstrong\x3eGlocke\x3c\/strong\x3e läuten hören, werden wir sofort wissen, dass unser #\x3cem\x3eFeind\x3c\/em\x3e# kommt.\x26rsquo;\x26rsquo;"],
+			
+				["All the #\x3cem\x3eMice\x3c\/em\x3e# were much surprised that they had not thought of such a plan before", "Alle #\x3cem\x3eMäuse\x3c\/em\x3e# waren sehr überrascht, dass sie noch nie an einen solchen Plan gedacht hatten"],
+			
+				["All the \x3cstrong\x3eMice\x3c\/strong\x3e were much surprised that they had not thought of such a #\x3cem\x3eplan\x3c\/em\x3e# before", "Alle \x3cstrong\x3eMäuse\x3c\/strong\x3e waren sehr überrascht, dass sie noch nie an einen solchen #\x3cem\x3ePlan\x3c\/em\x3e# gedacht hatten"],
+			
+				["But in the midst of the #\x3cem\x3erejoicing\x3c\/em\x3e# over their good fortune, an old Mouse arose and said :", "Aber inmitten der #\x3cem\x3eFreude\x3c\/em\x3e# über ihr Glück stand eine alte Maus auf und sagte:"],
+			
+				["But in the midst of the \x3cstrong\x3erejoicing\x3c\/strong\x3e over their #\x3cem\x3egood\x3c\/em\x3e# fortune, an \x3cstrong\x3eold\x3c\/strong\x3e Mouse arose and said :", "Aber inmitten der \x3cstrong\x3eFreude\x3c\/strong\x3e über ihr #\x3cem\x3eGlück\x3c\/em\x3e# stand eine \x3cstrong\x3ealte\x3c\/strong\x3e Maus auf und sagte:"],
+			
+				["But in the midst of the rejoicing over their \x3cstrong\x3egood\x3c\/strong\x3e fortune, an #\x3cem\x3eold\x3c\/em\x3e# \x3cstrong\x3eMouse\x3c\/strong\x3e arose and said :", "Aber inmitten der Freude über ihr \x3cstrong\x3eGlück\x3c\/strong\x3e stand eine #\x3cem\x3ealte\x3c\/em\x3e# \x3cstrong\x3eMaus\x3c\/strong\x3e auf und sagte:"],
+			
+				["But in the midst of the rejoicing over their good fortune, an \x3cstrong\x3eold\x3c\/strong\x3e #\x3cem\x3eMouse\x3c\/em\x3e# \x3cstrong\x3earose\x3c\/strong\x3e and said :", "Aber inmitten der Freude über ihr Glück \x3cstrong\x3estand\x3c\/strong\x3e eine \x3cstrong\x3ealte\x3c\/strong\x3e #\x3cem\x3eMaus\x3c\/em\x3e# auf und sagte:"],
+			
+				["But in the midst of the rejoicing over their good fortune, an old \x3cstrong\x3eMouse\x3c\/strong\x3e #\x3cem\x3earose\x3c\/em\x3e# and said :", "Aber mitten in der Freude über ihr Glück #\x3cem\x3estand\x3c\/em\x3e# eine alte \x3cstrong\x3eMaus\x3c\/strong\x3e auf und sagte:"],
+			
+				["\x26lsquo;\x26lsquo;I will say that the #\x3cem\x3eplan\x3c\/em\x3e# of the young Mouse is very good. But let me ask one question : Who will bell the Cat?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde sagen, dass der #\x3cem\x3ePlan\x3c\/em\x3e# der jungen Maus sehr gut ist. Aber lassen Sie mich eine Frage stellen: Wer wird die Katze anklingeln?\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I will say that the \x3cstrong\x3eplan\x3c\/strong\x3e of the #\x3cem\x3eyoung\x3c\/em\x3e# \x3cstrong\x3eMouse\x3c\/strong\x3e is very good. But let me ask one question : Who will bell the Cat?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde sagen, dass der \x3cstrong\x3ePlan\x3c\/strong\x3e der #\x3cem\x3ejungen\x3c\/em\x3e# \x3cstrong\x3eMaus\x3c\/strong\x3e sehr gut ist. Aber lassen Sie mich eine Frage stellen: Wer wird die Katze anklingeln?\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I will say that the plan of the \x3cstrong\x3eyoung\x3c\/strong\x3e #\x3cem\x3eMouse\x3c\/em\x3e# is very \x3cstrong\x3egood\x3c\/strong\x3e. But let me ask one question : Who will bell the Cat?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde sagen, dass der Plan der \x3cstrong\x3ejungen\x3c\/strong\x3e #\x3cem\x3eMaus\x3c\/em\x3e# sehr \x3cstrong\x3egut\x3c\/strong\x3e ist. Aber lassen Sie mich eine Frage stellen: Wer wird die Katze anklingeln?\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I will say that the plan of the young \x3cstrong\x3eMouse\x3c\/strong\x3e is very #\x3cem\x3egood\x3c\/em\x3e#. But let me ask one \x3cstrong\x3equestion\x3c\/strong\x3e : Who will bell the Cat?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde sagen, dass der Plan der jungen \x3cstrong\x3eMaus\x3c\/strong\x3e sehr #\x3cem\x3egut\x3c\/em\x3e# ist. Aber lassen Sie mich eine \x3cstrong\x3eFrage\x3c\/strong\x3e stellen: Wer wird die Katze anklingeln?\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I will say that the plan of the young Mouse is very \x3cstrong\x3egood\x3c\/strong\x3e. But let me ask one #\x3cem\x3equestion\x3c\/em\x3e# : Who will bell the \x3cstrong\x3eCat\x3c\/strong\x3e?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde sagen, dass der Plan der jungen Maus sehr \x3cstrong\x3egut\x3c\/strong\x3e ist. Aber lassen Sie mich eine #\x3cem\x3eFrage\x3c\/em\x3e# stellen: Wer wird die \x3cstrong\x3eKatze\x3c\/strong\x3e anklingeln?\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I will say that the plan of the young Mouse is very good. But let me ask one \x3cstrong\x3equestion\x3c\/strong\x3e : Who will bell the #\x3cem\x3eCat\x3c\/em\x3e#?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde sagen, dass der Plan der jungen Maus sehr gut ist. Aber lassen Sie mich eine \x3cstrong\x3eFrage\x3c\/strong\x3e stellen: Wer wird die #\x3cem\x3eKatze\x3c\/em\x3e# klingeln lassen?\x26rsquo;\x26rsquo;"],
+			
+				["It is one #\x3cem\x3ething\x3c\/em\x3e# to say that some\x3cem\x3ething\x3c\/em\x3e should be done, but quite a different matter to do it", "Es ist eine #\x3cem\x3eSache\x3c\/em\x3e# zu sagen, dass etwas getan werden sollte, aber eine ganz andere \x3cem\x3eSache\x3c\/em\x3e, um es zu tun"],
+			
+				["It is one \x3cstrong\x3ething\x3c\/strong\x3e to say that #\x3cem\x3esome\x3cstrong\x3ething\x3c\/strong\x3e\x3c\/em\x3e# should be done, but quite a \x3cstrong\x3edifferent\x3c\/strong\x3e matter to do it", "Es ist eine \x3cstrong\x3eSache\x3c\/strong\x3e zu sagen, dass #\x3cem\x3eetwas\x3c\/em\x3e# getan werden sollte, aber eine ganz \x3cstrong\x3eandere\x3c\/strong\x3e \x3cstrong\x3eSache\x3c\/strong\x3e, um es zu tun"],
+			
+				["It is one thing to say that \x3cstrong\x3esomething\x3c\/strong\x3e should be done, but quite a #\x3cem\x3edifferent\x3c\/em\x3e# \x3cstrong\x3ematter\x3c\/strong\x3e to do it", "Es ist eine Sache zu sagen, dass \x3cstrong\x3eetwas\x3c\/strong\x3e getan werden sollte, aber eine ganz #\x3cem\x3eandere\x3c\/em\x3e# \x3cstrong\x3eAngelegenheit\x3c\/strong\x3e, um es zu tun"],
+			
+				["It is one thing to say that something should be done, but quite a \x3cstrong\x3edifferent\x3c\/strong\x3e #\x3cem\x3ematter\x3c\/em\x3e# to do it", "Es ist eine Sache zu sagen, dass etwas getan werden sollte, aber eine ganz \x3cstrong\x3eandere\x3c\/strong\x3e #\x3cem\x3eAngelegenheit\x3c\/em\x3e#, um es zu tun"],
+			
+		
+		];
+		flip_text();
+	--></script>
+
+
+
+
+
+
+</body>
+
+</html>

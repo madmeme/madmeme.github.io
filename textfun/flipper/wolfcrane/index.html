@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>MadMeme - TextFun - 
+	
+	Flipper - wolfcrane
+</title>
+	<script src="/jquery-3.5.1.min.js"></script>
+	<link rel="icon" href="/favicon.ico" type="image/png">
+	
+	
+	
+		<link rel="stylesheet" href="/flipper.css">
+	
+	
+		<script src="/flipper.js"></script>
+	
+
+</head>
+
+<body>
+
+
+	
+
+	
+
+	wolfcrane
+	<button onclick="prev_card();">Prev!</button>
+	<button onclick="flip_card();">Flip!</button>
+	<button onclick="next_card();">Next!</button>
+
+	<br>
+	<br>
+	<br>
+
+	<center>
+
+	<table width="80%" border="0">
+		<tr>
+			<td align="right" valign="bottom" width="33%">
+
+				<div class="flip-card flip-show-front">
+					<div class="flip-card-inner flip-card-a">
+						<div class="space">
+							<span class="text-a-space"></span></div>
+						<div class="flip-card-deck flip-card-front">
+							<div class="flip-card-rightbot">
+								<span id="text-a-front" class="text-fade ani-fadein"></span></div>
+						</div>
+						<div class="flip-card-deck flip-card-back">
+							<div class="flip-card-rightbot">
+								<div class="flip-card-turned">
+									<span id="text-a-back" class="text-fade ani-fadein"></span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</td>
+			<td>
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td align="center" width="33%">
+
+				<div class="flip-card flip-show-front">
+					<div class="flip-card-inner flip-card-b">
+						<div class="space">
+							<span class="text-b-space"></span></div>
+						<div class="flip-card-deck flip-card-front">
+							<span id="text-b-front" class="text-fade ani-fadein"></span></div>
+						<div class="flip-card-deck flip-card-back">
+							<div class="flip-card-turned">
+								<span id="text-b-back" class="text-fade ani-fadein"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</td>
+			<td>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			</td>
+			<td>
+			</td>
+			<td align="left" valign="top" width="33%">
+
+				<div class="flip-card flip-show-front">
+					<div class="flip-card-inner flip-card-c">
+						<div class="space">
+							<span class="text-c-space"></span></div>
+						<div class="flip-card-deck flip-card-front">
+							<span id="text-c-front" class="text-fade ani-fadein"></span></div>
+						<div class="flip-card-deck flip-card-back">
+							<div class="flip-card-turned">
+								<span id="text-c-back" class="text-fade ani-fadein"></span></div>
+						</div>
+					</div>
+				</div>
+
+			</td>
+		</tr>
+	</table>
+
+	</center>
+
+	<script><!--
+		document.flip_num = 0;
+		document.flip_text = [
+		
+			
+				["The #\x3cem\x3eWolf\x3c\/em\x3e# \x26amp; the Crane", "Der #\x3cem\x3eWolf\x3c\/em\x3e# und der Kranich"],
+			
+				["The \x3cstrong\x3e\x3cstrong\x3eWolf\x3c\/strong\x3e\x3c\/strong\x3e \x26amp; the #\x3cem\x3eCrane\x3c\/em\x3e#", "Der \x3cstrong\x3e\x3cstrong\x3eWolf\x3c\/strong\x3e\x3c\/strong\x3e und der #\x3cem\x3eKranich\x3c\/em\x3e#"],
+			
+				["A #\x3cem\x3eWolf\x3c\/em\x3e# had been feasting too greedily, and a bone had stuck crosswise in his throat", "Ein #\x3cem\x3eWolf\x3c\/em\x3e# hatte zu gierig gegessen, und ein Knochen steckte quer in seiner Kehle"],
+			
+				["A \x3cstrong\x3eWolf\x3c\/strong\x3e had been feasting too greedily, and a #\x3cem\x3ebone\x3c\/em\x3e# had stuck \x3cstrong\x3ecrosswise\x3c\/strong\x3e in his throat", "Ein \x3cstrong\x3eWolf\x3c\/strong\x3e hatte zu gierig gegessen, und ein #\x3cem\x3eKnochen\x3c\/em\x3e# steckte \x3cstrong\x3equer\x3c\/strong\x3e in seiner Kehle"],
+			
+				["A Wolf had been feasting too greedily, and a \x3cstrong\x3ebone\x3c\/strong\x3e had stuck #\x3cem\x3ecrosswise\x3c\/em\x3e# in his \x3cstrong\x3ethroat\x3c\/strong\x3e", "Ein Wolf hatte zu gierig gegessen, und ein \x3cstrong\x3eKnochen\x3c\/strong\x3e hatte #\x3cem\x3equer\x3c\/em\x3e# in seiner \x3cstrong\x3eKehle\x3c\/strong\x3e gesteckt"],
+			
+				["A Wolf had been feasting too greedily, and a bone had stuck \x3cstrong\x3ecrosswise\x3c\/strong\x3e in his #\x3cem\x3ethroat\x3c\/em\x3e#", "Ein Wolf hatte zu gierig gegessen, und ein Knochen steckte \x3cstrong\x3equer\x3c\/strong\x3e in seiner #\x3cem\x3eKehle\x3c\/em\x3e#."],
+			
+				["He could get it neither up nor down, and #\x3cem\x3eof course\x3c\/em\x3e# he could not eat a thing", "Er konnte es weder hoch noch runter bekommen und #\x3cem\x3enatürlich\x3c\/em\x3e# konnte er nichts essen"],
+			
+				["He could get it neither up nor down, and \x3cstrong\x3eof course\x3c\/strong\x3e he could not eat a #\x3cem\x3ething\x3c\/em\x3e#", "Er konnte es weder hoch noch runter bringen, und \x3cstrong\x3enatürlich\x3c\/strong\x3e konnte er kein #\x3cem\x3eDing\x3c\/em\x3e# essen."],
+			
+				["Naturally that was an #\x3cem\x3eawful\x3c\/em\x3e# state of affairs for a greedy Wolf", "Das war natürlich ein #\x3cem\x3eschrecklicher\x3c\/em\x3e# Zustand für einen gierigen Wolf"],
+			
+				["Naturally that was an \x3cstrong\x3eawful\x3c\/strong\x3e #\x3cem\x3estate\x3c\/em\x3e# of affairs for a \x3cstrong\x3egreedy\x3c\/strong\x3e Wolf", "Das war natürlich ein \x3cstrong\x3eschrecklicher\x3c\/strong\x3e #\x3cem\x3eZustand\x3c\/em\x3e# für einen \x3cstrong\x3egierigen\x3c\/strong\x3e Wolf"],
+			
+				["Naturally that was an awful \x3cstrong\x3estate\x3c\/strong\x3e of affairs for a #\x3cem\x3egreedy\x3c\/em\x3e# \x3cstrong\x3eWolf\x3c\/strong\x3e", "Das war natürlich ein schrecklicher \x3cstrong\x3eZustand\x3c\/strong\x3e für einen #\x3cem\x3egierigen\x3c\/em\x3e# \x3cstrong\x3eWolf\x3c\/strong\x3e"],
+			
+				["Naturally that was an awful state of affairs for a \x3cstrong\x3egreedy\x3c\/strong\x3e #\x3cem\x3eWolf\x3c\/em\x3e#", "Das war natürlich ein schrecklicher Zustand für einen \x3cstrong\x3egierigen\x3c\/strong\x3e #\x3cem\x3eWolf\x3c\/em\x3e#"],
+			
+				["So away he hurried to the #\x3cem\x3eCrane\x3c\/em\x3e#", "Also eilte er zum #\x3cem\x3eKranich\x3c\/em\x3e#"],
+			
+				["He was #\x3cem\x3esure\x3c\/em\x3e# that she, with her long neck and bill, would easily be able to reach the bone and pull it out", "Er war #\x3cem\x3esicher\x3c\/em\x3e#, dass sie mit ihrem langen Hals und Schnabel leicht in der Lage sein würde, den Knochen zu erreichen und ihn herauszuziehen"],
+			
+				["He was \x3cstrong\x3esure\x3c\/strong\x3e that she, with her #\x3cem\x3elong\x3c\/em\x3e# \x3cstrong\x3eneck\x3c\/strong\x3e and bill, would easily be able to reach the bone and pull it out", "Er war sich \x3cstrong\x3esicher\x3c\/strong\x3e, dass sie mit ihrem #\x3cem\x3elangen\x3c\/em\x3e# \x3cstrong\x3eHals\x3c\/strong\x3e und Schnabel leicht in der Lage sein würde, den Knochen zu erreichen und ihn herauszuziehen"],
+			
+				["He was sure that she, with her \x3cstrong\x3elong\x3c\/strong\x3e #\x3cem\x3eneck\x3c\/em\x3e# and \x3cstrong\x3ebill\x3c\/strong\x3e, would easily be able to reach the bone and pull it out", "Er war sich sicher, dass sie mit ihrem \x3cstrong\x3elangen\x3c\/strong\x3e #\x3cem\x3eHals\x3c\/em\x3e# und Schnabel leicht in der Lage sein würde, den Knochen zu erreichen und ihn herauszuziehen"],
+			
+				["He was sure that she, with her long \x3cstrong\x3eneck\x3c\/strong\x3e and #\x3cem\x3ebill\x3c\/em\x3e#, would easily be \x3cstrong\x3eable\x3c\/strong\x3e to reach the bone and pull it out", "Er war sich sicher, dass sie mit ihrem langen \x3cstrong\x3eHals\x3c\/strong\x3e und ihrer #\x3cem\x3eRechnung\x3c\/em\x3e# leicht \x3cstrong\x3ein der Lage\x3c\/strong\x3e sein würde, den Knochen zu erreichen und ihn herauszuziehen"],
+			
+				["He was sure that she, with her long neck and \x3cstrong\x3ebill\x3c\/strong\x3e, would easily be #\x3cem\x3eable\x3c\/em\x3e# to reach the \x3cstrong\x3ebone\x3c\/strong\x3e and pull it out", "Er war sich sicher, dass sie mit ihrem langen Hals und Schnabel leicht #\x3cem\x3ein der Lage\x3c\/em\x3e# sein würde, den \x3cstrong\x3eKnochen\x3c\/strong\x3e zu erreichen und ihn herauszuziehen"],
+			
+				["He was sure that she, with her long neck and bill, would easily be \x3cstrong\x3eable\x3c\/strong\x3e to reach the #\x3cem\x3ebone\x3c\/em\x3e# and pull it out", "Er war sich sicher, dass sie mit ihrem langen Hals und Schnabel leicht den #\x3cem\x3eKnochen\x3c\/em\x3e# erreichen und herausziehen konnte"],
+			
+				["\x26lsquo;\x26lsquo;I will reward you very handsomely,\x26rsquo;\x26rsquo; said the #\x3cem\x3eWolf\x3c\/em\x3e#, \x26lsquo;\x26lsquo;if you pull that bone out for me.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde dich sehr schön belohnen,\x26rsquo;\x26rsquo; sagte der #\x3cem\x3eWolf\x3c\/em\x3e#, \x26lsquo;\x26lsquo;wenn du mir den Knochen rausziehst.\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;I will reward you very handsomely,\x26rsquo;\x26rsquo; said the \x3cstrong\x3eWolf\x3c\/strong\x3e, \x26lsquo;\x26lsquo;if you pull that #\x3cem\x3ebone\x3c\/em\x3e# out for me.\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Ich werde dich sehr schön belohnen,\x26rsquo;\x26rsquo; sagte der \x3cstrong\x3eWolf\x3c\/strong\x3e, \x26lsquo;\x26lsquo;wenn du diesen #\x3cem\x3eKnochen\x3c\/em\x3e# für mich herausziehst.\x26rsquo;\x26rsquo;"],
+			
+				["The #\x3cem\x3eCrane\x3c\/em\x3e#, as you can imagine, was very uneasy about putting her head in a Wolf\x26rsquo;s throat", "Der #\x3cem\x3eKranich\x3c\/em\x3e# war, wie Sie sich vorstellen können, sehr unruhig, wenn es darum ging, ihren Kopf in die Kehle eines Wolfes zu stecken"],
+			
+				["The \x3cstrong\x3eCrane\x3c\/strong\x3e, as you can imagine, was very #\x3cem\x3euneasy\x3c\/em\x3e# about putting her \x3cstrong\x3ehead\x3c\/strong\x3e in a Wolf\x26rsquo;s throat", "Wie Sie sich vorstellen können, war der \x3cstrong\x3eKranich\x3c\/strong\x3e sehr #\x3cem\x3eunruhig\x3c\/em\x3e#, wenn es darum ging, ihren \x3cstrong\x3eKopf\x3c\/strong\x3e in die Kehle eines Wolfes zu stecken"],
+			
+				["The Crane, as you can imagine, was very \x3cstrong\x3euneasy\x3c\/strong\x3e about putting her #\x3cem\x3ehead\x3c\/em\x3e# in a \x3cstrong\x3eWolf\x3c\/strong\x3e\x26lsquo;s throat", "Wie Sie sich vorstellen können, war es dem Kranich sehr unangenehm, ihren #\x3cem\x3eKopf\x3c\/em\x3e# in die Kehle eines Wolfes zu stecken"],
+			
+				["The Crane, as you can imagine, was very uneasy about putting her \x3cstrong\x3ehead\x3c\/strong\x3e in a #\x3cem\x3eWolf\x3c\/em\x3e#\x26lsquo;s \x3cstrong\x3ethroat\x3c\/strong\x3e", "Wie Sie sich vorstellen können, war es dem Kranich sehr unangenehm, ihren \x3cstrong\x3eKopf\x3c\/strong\x3e in die \x3cstrong\x3eKehle\x3c\/strong\x3e eines #\x3cem\x3eWolfs\x3c\/em\x3e# zu stecken"],
+			
+				["The Crane, as you can imagine, was very uneasy about putting her head in a \x3cstrong\x3eWolf\x3c\/strong\x3e\x26lsquo;s #\x3cem\x3ethroat\x3c\/em\x3e#", "Wie Sie sich vorstellen können, war es dem Kranich sehr unangenehm, ihren Kopf in die #\x3cem\x3eKehle\x3c\/em\x3e# eines Wolfes zu stecken."],
+			
+				["But she was grasping in #\x3cem\x3enature\x3c\/em\x3e#, so she did what the Wolf asked her to do", "Aber sie griff nach #\x3cem\x3eNatur\x3c\/em\x3e#, also tat sie, was der Wolf von ihr verlangte"],
+			
+				["But she was grasping in \x3cstrong\x3enature\x3c\/strong\x3e, so she did what the #\x3cem\x3e\x3cstrong\x3eWolf\x3c\/strong\x3e\x3c\/em\x3e# asked her to do", "Aber sie griff nach der \x3cstrong\x3eNatur\x3c\/strong\x3e und tat, was der #\x3cem\x3e\x3cstrong\x3eWolf\x3c\/strong\x3e\x3c\/em\x3e# von ihr verlangte"],
+			
+				["When the #\x3cem\x3eWolf\x3c\/em\x3e# felt that the bone was gone, he started to walk away", "Als der #\x3cem\x3eWolf\x3c\/em\x3e# spürte, dass der Knochen weg war, ging er weg"],
+			
+				["When the \x3cstrong\x3eWolf\x3c\/strong\x3e felt that the #\x3cem\x3ebone\x3c\/em\x3e# was gone, he started to walk away", "Als der \x3cstrong\x3eWolf\x3c\/strong\x3e spürte, dass der #\x3cem\x3eKnochen\x3c\/em\x3e# weg war, ging er weg"],
+			
+				["\x26lsquo;\x26lsquo;But what about my #\x3cem\x3ereward\x3c\/em\x3e#!\x26rsquo;\x26rsquo; called the Crane anxiously", "\x26lsquo;\x26lsquo;Aber was ist mit meiner #\x3cem\x3eBelohnung\x3c\/em\x3e#!\x26rsquo;\x26rsquo; rief den Kranich ängstlich an"],
+			
+				["\x26lsquo;\x26lsquo;But what about my \x3cstrong\x3ereward\x3c\/strong\x3e!\x26rsquo;\x26rsquo; called the #\x3cem\x3eCrane\x3c\/em\x3e# anxiously", "\x26lsquo;\x26lsquo;Aber was ist mit meiner \x3cstrong\x3eBelohnung\x3c\/strong\x3e?\x26rsquo;\x26rsquo; nannte den #\x3cem\x3eKranich\x3c\/em\x3e# ängstlich"],
+			
+				["\x26lsquo;\x26lsquo;What!\x26rsquo;\x26rsquo; snarled the #\x3cem\x3eWolf\x3c\/em\x3e#, whirling around", "\x26lsquo;\x26lsquo;Was!\x26rsquo;\x26rsquo; knurrte der #\x3cem\x3eWolf\x3c\/em\x3e# und wirbelte herum"],
+			
+				["\x26lsquo;\x26lsquo;Have n\x26rsquo;t you got it? Is n\x26rsquo;t it enough that I let you take your #\x3cem\x3ehead\x3c\/em\x3e# out of my mouth without snapping it off?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Hast du es nicht? Ist es nicht genug, dass ich dich deinen #\x3cem\x3eKopf\x3c\/em\x3e# aus meinem Mund nehmen lasse, ohne ihn abzubrechen?\x26rsquo;\x26rsquo;"],
+			
+				["\x26lsquo;\x26lsquo;Have n\x26rsquo;t you got it? Is n\x26rsquo;t it enough that I let you take your \x3cstrong\x3ehead\x3c\/strong\x3e out of my #\x3cem\x3emouth\x3c\/em\x3e# without snapping it off?\x26rsquo;\x26rsquo;", "\x26lsquo;\x26lsquo;Hast du es nicht? Ist es nicht genug, dass ich dich deinen \x3cstrong\x3eKopf\x3c\/strong\x3e aus meinem #\x3cem\x3eMund\x3c\/em\x3e# nehmen lasse, ohne ihn abzubrechen?\x26rsquo;\x26rsquo;"],
+			
+				["Expect no #\x3cem\x3ereward\x3c\/em\x3e# for serving the wicked", "Erwarten Sie keine #\x3cem\x3eBelohnung\x3c\/em\x3e# für das Dienen der Bösen"],
+			
+				["Expect no \x3cstrong\x3ereward\x3c\/strong\x3e for serving the #\x3cem\x3ewicked\x3c\/em\x3e#", "Erwarten Sie keine \x3cstrong\x3eBelohnung\x3c\/strong\x3e für das Dienen der #\x3cem\x3eBösen\x3c\/em\x3e#"],
+			
+		
+		];
+		flip_text();
+	--></script>
+
+
+
+
+
+
+</body>
+
+</html>
