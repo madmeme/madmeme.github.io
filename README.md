@@ -1,2 +1,0 @@
-# madmeme.github.io
-madmeme
