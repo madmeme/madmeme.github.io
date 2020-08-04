@@ -1,0 +1,155 @@
+img[alt=text]
+{
+	height: 2rem;
+}
+
+p,
+td,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6
+{
+	border: 0;
+/*	font-size: medium; */
+/*	font-family: "Times New Roman", Times, serif; */
+}
+
+/*
+h1 { font-size: xx-large; }
+h2 { font-size: x-large; }
+h3 { font-size: large; }
+*/
+
+span,
+select,
+input,
+button
+{
+	border: 0;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: italic;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+span,
+label
+{
+	display: inline;
+}
+
+select
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	text-indent: 1px;
+	text-overflow: '';
+}
+
+body
+{
+	background-color: #fdfdfd;
+}
+
+input[type="radio"],
+input[type="checkbox"]
+{
+	transform: scale(1.25);
+}
+
+td
+{
+	padding: 0.25rem;
+}
+
+.highlight-paragraph
+{
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	display: block;
+}
+
+.highlight-narrator
+{
+	background-color: #f0f0f0;
+	color: #666;
+}
+
+.highlight-narrator *
+{
+/*
+	font-family: Arial, Helvetica, sans-serif !important;
+*/
+}
+
+.highlight-normal
+{
+	font-style: normal;
+}
+
+.highlight-nocheck
+{
+	color: #999;
+}
+
+.highlight-wrong
+{
+	color: #f00;
+	border: 1px dashed #555;
+}
+
+/*
+.highlight-wrong:after
+{
+	color: #f00;
+	content: url('/click.png');
+	width: 1rem;
+	height: 1rem;
+}
+*/
+
+.highlight-signal1 { background-color: #ffc; }
+.highlight-signal2 { background-color: #fcf; }
+.highlight-signal3 { background-color: #cff; }
+.highlight-signal4 { background-color: #ffb; }
+.highlight-signal5 { background-color: #fbf; }
+.highlight-signal6 { background-color: #bff; }
+.highlight-signal7 { background-color: #fcb; }
+.highlight-signal8 { background-color: #fcd; }
+.highlight-signal9 { background-color: #fbb; }
+
+.ani-fadein
+{
+	animation:         key-opacity-fadein ease 1s forwards;
+	-webkit-animation: key-opacity-fadein ease 1s forwards;
+	-moz-animation:    key-opacity-fadein ease 1s forwards;
+	-o-animation:      key-opacity-fadein ease 1s forwards;
+	-ms-animation:     key-opacity-fadein ease 1s forwards;
+}
+
+.ani-fadeout
+{
+	animation:         key-opacity-fadeout ease 1s forwards;
+	-webkit-animation: key-opacity-fadeout ease 1s forwards;
+	-moz-animation:    key-opacity-fadeout ease 1s forwards;
+	-o-animation:      key-opacity-fadeout ease 1s forwards;
+	-ms-animation:     key-opacity-fadeout ease 1s forwards;
+}
+
+@keyframes         key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
+@-moz-keyframes    key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
+@-webkit-keyframes key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
+@-o-keyframes      key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
+@-ms-keyframes     key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
+
+@keyframes         key-opacity-fadeout { from {opacity:1;} to {opacity:0;} }
+@-moz-keyframes    key-opacity-fadeout { from {opacity:1;} to {opacity:0;} }
+@-webkit-keyframes key-opacity-fadeout { from {opacity:1;} to {opacity:0;} }
+@-o-keyframes      key-opacity-fadeout { from {opacity:1;} to {opacity:0;} }
+@-ms-keyframes     key-opacity-fadeout { from {opacity:1;} to {opacity:0;} }
