@@ -50,7 +50,7 @@ function paratext_elem_user(elem)
 		}
 	});
 	$(elem).children("button").each((i,e) => {
-		text = text + $(e).children("span").html() + " ";
+		text = text + $("#" + $(e).children("span").attr("id") + "-deco").val() + " ";
 	});
 	return text.trim();
 }
@@ -71,6 +71,40 @@ function paratext_elem_enable(enabled, found, elem)
 			$(elem).addClass("highlight-wrong");
 		}
 		return false;
+	}
+	return enabled;
+}
+
+function paratext_signals_enable(enabled, found, eids)
+{
+	for (i = 0; i < eids.length; i++)
+	{
+		$(".signal-" + eids[i]).each((i,elem) => {
+			if ($(elem).hasClass("paratext-react"))
+			{
+				enabled = paratext_elem_enable(enabled, found, elem);
+			}
+			$(elem).children("select").each((i,e) => {
+				enabled = paratext_elem_enable(enabled, found, e);
+			});
+			$(elem).children("input").each((i,e) => {
+				if ($(e).attr("type") == "checkbox")
+				{
+					enabled = paratext_elem_enable(enabled, found, $("#" + $(e).attr("id") + "-label"));
+				}
+				else if ($(e).attr("type") == "radio")
+				{
+					enabled = paratext_elem_enable(enabled, found, $("#" + $(e).attr("id") + "-label"));
+				}
+				else if ($(e).attr("type") == "text")
+				{
+					enabled = paratext_elem_enable(enabled, found, e);
+				}
+			});
+			$(elem).children("button").each((i,e) => {
+				enabled = paratext_elem_enable(enabled, found, $(e).children("span"));
+			});
+		});
 	}
 	return enabled;
 }
@@ -193,6 +227,7 @@ function paratext_paragraph_check(pid)
 			enabled = false;
 			$(e).html($("#" + $(e).attr("id") + "-deco").val());
 		}
+		enabled = paratext_signals_enable(enabled, found, eids);
 	});
 	$("#" + pid + " .paratext-perm").each((i,e) => {
 		let eids = $("#" + $(e).attr("id") + "-elem").val().trim().split(" ");
@@ -233,9 +268,9 @@ function paratext_paragraph_check(pid)
 		}
 		else
 		{
-			enabled = false;
 			$(e).html($("#" + $(e).attr("id") + "-deco").val());
 		}
+		enabled = paratext_signals_enable(enabled, found, eids);
 	});
 	$("#" + pid + " .paratext-combo").each((i,e) => {
 		let eids = $("#" + $(e).attr("id") + "-elem").val().trim().split(" ");
@@ -266,9 +301,9 @@ function paratext_paragraph_check(pid)
 		}
 		else
 		{
-			enabled = false;
 			$(e).html($("#" + $(e).attr("id") + "-deco").val());
 		}
+		enabled = paratext_signals_enable(enabled, found, eids);
 	});
 	$("#" + pid + " .paratext-count").each((i,e) => {
 		let eids = $("#" + $(e).attr("id") + "-elem").val().trim().split(" ");
@@ -318,9 +353,9 @@ function paratext_paragraph_check(pid)
 		}
 		else
 		{
-			enabled = false;
 			$(e).html($("#" + $(e).attr("id") + "-deco").val());
 		}
+		enabled = paratext_signals_enable(enabled, found, eids);
 	});
 	return enabled;
 }

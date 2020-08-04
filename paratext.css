@@ -62,9 +62,11 @@ input[type="checkbox"]
 	transform: scale(1.25);
 }
 
+th,
 td
 {
 	padding: 0.25rem;
+	text-align: center;
 }
 
 .highlight-paragraph
