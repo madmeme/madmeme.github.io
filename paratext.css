@@ -126,6 +126,27 @@ td
 .highlight-signal8 { background-color: #fcd; }
 .highlight-signal9 { background-color: #fbb; }
 
+.footer
+{
+	font-size: small;
+	color: #777;
+	text-align: center;
+}
+
+.footer a
+{
+	font-size: small;
+	color: #777;
+	text-align: center;
+}
+
+.licence
+{
+	font-size: small;
+	color: #aaa;
+	text-align: right;
+}
+
 .ani-fadein
 {
 	animation:         key-opacity-fadein ease 1s forwards;
