@@ -133,6 +133,23 @@ body
 	text-align: center;
 }
 
+.sitead
+{
+	text-align: center;
+	margin-top: 1rem !important;
+}
+
+.logo
+{
+	font-size: 2rem;
+	font-variant: small-caps;
+}
+
+.motto
+{
+	display: inline-block;
+}
+
 .licence
 {
 	font-size: small;
