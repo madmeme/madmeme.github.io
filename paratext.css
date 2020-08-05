@@ -136,13 +136,14 @@ body
 .sitead
 {
 	text-align: center;
-	margin-top: 1rem !important;
+	margin-top: 1rem;
 }
 
 .logo
 {
 	font-size: 2rem;
 	font-variant: small-caps;
+	font-style: normal;
 }
 
 .motto
