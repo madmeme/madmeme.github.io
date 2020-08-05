@@ -4,7 +4,7 @@ var paratext_dt_fade = 1;
 var paratext_dt_flip = 5;
 var paratext_dt_signal = 3;
 var paratext_dt_enable = 3;
-var paratext_chscale = 0.80;
+var paratext_chscale = 1.0;
 
 ////////////////////////////////////////////////////////////////////////
 
