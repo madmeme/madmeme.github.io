@@ -95,7 +95,7 @@ a {
 	text-decoration: none;
 	}
 a:hover {
-	text-decoration: underline;
+	font-variant: small-caps;
 	}
 a img {
 	border:none;
