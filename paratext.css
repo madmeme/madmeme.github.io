@@ -85,7 +85,7 @@ body
 
 .highlight-normal
 {
-	font-style: normal;
+	font-style: normal !important;
 }
 
 .highlight-nocheck
