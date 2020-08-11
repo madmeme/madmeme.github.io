@@ -36,37 +36,31 @@
 <h3 id="introduction">Introduction</h3>
 </div>
 <div style="text-align: left;">
-<p>Shortly you will see a interactive text. Click 
-	<span class="signal-0 "><button onclick="paratext_flip('uid0')"><span class="paratext-flip" id="uid0">here</span></button></span><input type="hidden" class="uid0-text" value="Surprise"><input type="hidden" id="uid0-deco" value="here">!</p>
+<p>Shortly you will see a interactive text. Click <span class="signal-0 "><button onclick="paratext_flip('uid0')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid0">here</span></button></span><input type="hidden" class="uid0-text" value="Surprise"><input type="hidden" id="uid0-deco" value="here">!</p>
 </div>
 <div class="paratext-narrator highlight-narrator" style="display: none;">
 <div style="text-align: center;">
-<p>Each 
-	<span class="signal-0 "><button onclick="paratext_flip('uid1')"><span class="paratext-flip" id="uid1">italic</span></button></span><input type="hidden" class="uid1-text" value="Surprise!"><input type="hidden" id="uid1-deco" value="italic"> word in the text can be clicked.
+<p>Each <span class="signal-0 "><button onclick="paratext_flip('uid1')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid1">italic</span></button></span><input type="hidden" class="uid1-text" value="Surprise!"><input type="hidden" id="uid1-deco" value="italic"> word in the text can be clicked.
 Try it out now and click the words above.
 Many interactions are hidden.
-
-	<span class="signal-0  highlight-normal"><input type="checkbox"
-		value="Let&#39;s go!" id="uid2" name="0-check"
-		class="paratext-check" onclick="paratext_check(&#34;uid2&#34;)">&nbsp;<label for="0-check" id="uid2-label"
+<span class="signal-0  highlight-normal" style="display: inline-block;"><input type="checkbox" value="Let&#39;s go!" id="uid2" name="0-check"
+		class="paratext-check" onclick="paratext_check('uid2')">&nbsp;<label for="0-check" id="uid2-label"
 		class="paratext-label">Continue?</label></span><input type="hidden" id="uid2-flag" value="X"><input type="hidden" class="uid2-text" value="Let&#39;s go!"><input type="hidden" id="uid2-deco" value="Continue?"></p>
 </div>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid1" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>However, the text contains riddles. Only if all riddles 
-	<span class="signal-0 "><input type="text" value="is" id="uid3" class="paratext-input"
-		onkeyup="paratext_input_check(&#34;uid3&#34;)"
-		onfocus="paratext_input_focus(&#34;uid3&#34;)"
-		onblur="paratext_input_blur(&#34;uid3&#34;)"></span><input type="hidden" class="uid3-text" value="are"><input type="hidden" id="uid3-deco" value="is">
-solved, the 
-	<span class="signal-0 "><select id="uid4" class="paratext-select"><option value="boring" selected>boring</option><option value="previous">previous</option><option value="next">next</option><option value="boring">boring</option></select></span><input type="hidden" class="uid4-text" value="next"><input type="hidden" id="uid4-deco" value="boring"> paragraph is shown.</p>
+<p>However, the text contains riddles. Only if all riddles <span class="signal-0 "><input type="text" value="is" id="uid3" class="paratext-input"
+		onkeyup="paratext_input_check('uid3')"
+		onfocus="paratext_input_focus('uid3')"
+		onblur="paratext_input_blur('uid3')"></span><input type="hidden" class="uid3-text" value="are"><input type="hidden" id="uid3-deco" value="is">
+solved, the <span class="signal-0 "><select id="uid4" class="paratext-select"
+		onchange="paratext_select('uid4');"><option value="boring" selected>boring</option><option value="previous">previous</option><option value="next">next</option><option value="boring">boring</option></select></span><input type="hidden" class="uid4-text" value="next"><input type="hidden" id="uid4-deco" value="boring"> paragraph is shown.</p>
 </div>
 <div class="paratext-narrator highlight-narrator" style="display: none;">
 <div style="text-align: center;">
-<p>Riddles are denoted using 
-	<span class="signal-0 "><button onclick="paratext_flip('uid5')"><span class="paratext-flip" id="uid5">red</span></button></span><input type="hidden" class="uid5-text" value="Surprise!"><input type="hidden" id="uid5-deco" value="red"> text. Solve the riddle!</p>
+<p>Riddles are denoted using <span class="signal-0 "><button onclick="paratext_flip('uid5')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid5">red</span></button></span><input type="hidden" class="uid5-text" value="Surprise!"><input type="hidden" id="uid5-deco" value="red"> text. Solve the riddle!</p>
 </div>
 </div>
 </div>
@@ -77,88 +71,72 @@ solved, the
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid3" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<h2 id="hahahugoshortcode-s6-hbhb">
-	<span class="signal-0 "><button onclick="paratext_flip('uid6')"><span class="paratext-flip" id="uid6">spring fragrance</span></button></span><input type="hidden" class="uid6-text" value="Frühlingsduft"><input type="hidden" id="uid6-deco" value="spring fragrance"></h2>
+<h2 id="hahahugoshortcode-s6-hbhb"><span class="signal-0 "><button onclick="paratext_flip('uid6')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid6">spring fragrance</span></button></span><input type="hidden" class="uid6-text" value="Frühlingsduft"><input type="hidden" id="uid6-deco" value="spring fragrance"></h2>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid4" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Philipp und Emma machen mit 
-	<span class="signal-0 "><select id="uid7" class="paratext-select"><option value="____" selected>____</option><option value="euren">euren</option><option value="meinen">meinen</option><option value="seinen">seinen</option><option value="unseren">unseren</option><option value="ihren">ihren</option><option value="deinen">deinen</option></select></span><input type="hidden" class="uid7-text" value="ihren"><input type="hidden" id="uid7-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid8')"><span class="paratext-flip" id="uid8">parents</span></button></span><input type="hidden" class="uid8-text" value="Eltern"><input type="hidden" id="uid8-deco" value="parents"> 
-	<span class="signal-0 "><select id="uid9" class="paratext-select"><option value="____" selected>____</option><option value="eines">eines</option><option value="eine">eine</option><option value="einem">einem</option><option value="einer">einer</option><option value="ein">ein</option><option value="einen">einen</option></select></span><input type="hidden" class="uid9-text" value="einen"><input type="hidden" id="uid9-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid10')"><span class="paratext-flip" id="uid10">walk</span></button></span><input type="hidden" class="uid10-text" value="Spaziergang"><input type="hidden" id="uid10-deco" value="walk">.</p>
+<p>Philipp und Emma machen mit <span class="signal-0 "><select id="uid7" class="paratext-select"
+		onchange="paratext_select('uid7');"><option value="____" selected>____</option><option value="ihren">ihren</option><option value="deinen">deinen</option><option value="unseren">unseren</option><option value="euren">euren</option><option value="seinen">seinen</option><option value="meinen">meinen</option></select></span><input type="hidden" class="uid7-text" value="ihren"><input type="hidden" id="uid7-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid8')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid8">parents</span></button></span><input type="hidden" class="uid8-text" value="Eltern"><input type="hidden" id="uid8-deco" value="parents"> <span class="signal-0 "><select id="uid9" class="paratext-select"
+		onchange="paratext_select('uid9');"><option value="____" selected>____</option><option value="einen">einen</option><option value="eines">eines</option><option value="ein">ein</option><option value="einer">einer</option><option value="einem">einem</option><option value="eine">eine</option></select></span><input type="hidden" class="uid9-text" value="einen"><input type="hidden" id="uid9-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid10')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid10">walk</span></button></span><input type="hidden" class="uid10-text" value="Spaziergang"><input type="hidden" id="uid10-deco" value="walk">.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid5" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid11" class="paratext-select"><option value="____" selected>____</option><option value="Es">Es</option><option value="Ihr">Ihr</option><option value="Du">Du</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option></select></span><input type="hidden" class="uid11-text" value="Sie"><input type="hidden" id="uid11-deco" value="____"> nörgeln herum, weil 
-	<span class="signal-0 "><select id="uid12" class="paratext-select"><option value="____" selected>____</option><option value="es">es</option><option value="ihr">ihr</option><option value="du">du</option><option value="er">er</option><option value="sie">sie</option><option value="wir">wir</option><option value="ich">ich</option></select></span><input type="hidden" class="uid12-text" value="sie"><input type="hidden" id="uid12-deco" value="____"> 
-	<span class="signal-0 "><select id="uid13" class="paratext-select"><option value="____" selected>____</option><option value="es">es</option><option value="ihr">ihr</option><option value="du">du</option><option value="er">er</option><option value="sie">sie</option><option value="wir">wir</option><option value="ich">ich</option></select></span><input type="hidden" class="uid13-text" value="es"><input type="hidden" id="uid13-deco" value="____"> nicht mögen, in 
-	<span class="signal-0 "><select id="uid14" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid14-text" value="der"><input type="hidden" id="uid14-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid15')"><span class="paratext-flip" id="uid15">area</span></button></span><input type="hidden" class="uid15-text" value="Gegend"><input type="hidden" id="uid15-deco" value="area"> herumzulaufen.</p>
+<p><span class="signal-0 "><select id="uid11" class="paratext-select"
+		onchange="paratext_select('uid11');"><option value="____" selected>____</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option><option value="Ihr">Ihr</option><option value="Es">Es</option><option value="Du">Du</option></select></span><input type="hidden" class="uid11-text" value="Sie"><input type="hidden" id="uid11-deco" value="____"> nörgeln herum, weil <span class="signal-0 "><select id="uid12" class="paratext-select"
+		onchange="paratext_select('uid12');"><option value="____" selected>____</option><option value="er">er</option><option value="sie">sie</option><option value="wir">wir</option><option value="ich">ich</option><option value="ihr">ihr</option><option value="es">es</option><option value="du">du</option></select></span><input type="hidden" class="uid12-text" value="sie"><input type="hidden" id="uid12-deco" value="____"> <span class="signal-0 "><select id="uid13" class="paratext-select"
+		onchange="paratext_select('uid13');"><option value="____" selected>____</option><option value="er">er</option><option value="sie">sie</option><option value="wir">wir</option><option value="ich">ich</option><option value="ihr">ihr</option><option value="es">es</option><option value="du">du</option></select></span><input type="hidden" class="uid13-text" value="es"><input type="hidden" id="uid13-deco" value="____"> nicht mögen, in <span class="signal-0 "><select id="uid14" class="paratext-select"
+		onchange="paratext_select('uid14');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid14-text" value="der"><input type="hidden" id="uid14-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid15')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid15">area</span></button></span><input type="hidden" class="uid15-text" value="Gegend"><input type="hidden" id="uid15-deco" value="area"> herumzulaufen.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid6" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Doch 
-	<span class="signal-0 "><select id="uid16" class="paratext-select"><option value="____" selected>____</option><option value="unsere">unsere</option><option value="seine">seine</option><option value="meine">meine</option><option value="eure">eure</option><option value="deine">deine</option><option value="ihre">ihre</option></select></span><input type="hidden" class="uid16-text" value="ihre"><input type="hidden" id="uid16-deco" value="____"> 
-	<span class="signal-0 "><input type="text" value="parents" id="uid17" class="paratext-input"
-		onkeyup="paratext_input_check(&#34;uid17&#34;)"
-		onfocus="paratext_input_focus(&#34;uid17&#34;)"
-		onblur="paratext_input_blur(&#34;uid17&#34;)"></span><input type="hidden" class="uid17-text" value="Eltern"><input type="hidden" id="uid17-deco" value="parents"> haben 
-	<span class="signal-0 "><select id="uid18" class="paratext-select"><option value="____" selected>____</option><option value="eines">eines</option><option value="eine">eine</option><option value="einem">einem</option><option value="einer">einer</option><option value="ein">ein</option><option value="einen">einen</option></select></span><input type="hidden" class="uid18-text" value="eine"><input type="hidden" id="uid18-deco" value="____"> gute 
-	<span class="signal-0 "><button onclick="paratext_flip('uid19')"><span class="paratext-flip" id="uid19">idea</span></button></span><input type="hidden" class="uid19-text" value="Idee"><input type="hidden" id="uid19-deco" value="idea">, 
-	<span class="signal-0 "><select id="uid20" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid20-text" value="die"><input type="hidden" id="uid20-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid21')"><span class="paratext-flip" id="uid21">children</span></button></span><input type="hidden" class="uid21-text" value="Kinder"><input type="hidden" id="uid21-deco" value="children"> abzulenken.</p>
+<p>Doch <span class="signal-0 "><select id="uid16" class="paratext-select"
+		onchange="paratext_select('uid16');"><option value="____" selected>____</option><option value="seine">seine</option><option value="deine">deine</option><option value="eure">eure</option><option value="ihre">ihre</option><option value="unsere">unsere</option><option value="meine">meine</option></select></span><input type="hidden" class="uid16-text" value="ihre"><input type="hidden" id="uid16-deco" value="____"> <span class="signal-0 "><input type="text" value="parents" id="uid17" class="paratext-input"
+		onkeyup="paratext_input_check('uid17')"
+		onfocus="paratext_input_focus('uid17')"
+		onblur="paratext_input_blur('uid17')"></span><input type="hidden" class="uid17-text" value="Eltern"><input type="hidden" id="uid17-deco" value="parents"> haben <span class="signal-0 "><select id="uid18" class="paratext-select"
+		onchange="paratext_select('uid18');"><option value="____" selected>____</option><option value="einen">einen</option><option value="eines">eines</option><option value="ein">ein</option><option value="einer">einer</option><option value="einem">einem</option><option value="eine">eine</option></select></span><input type="hidden" class="uid18-text" value="eine"><input type="hidden" id="uid18-deco" value="____"> gute <span class="signal-0 "><button onclick="paratext_flip('uid19')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid19">idea</span></button></span><input type="hidden" class="uid19-text" value="Idee"><input type="hidden" id="uid19-deco" value="idea">, <span class="signal-0 "><select id="uid20" class="paratext-select"
+		onchange="paratext_select('uid20');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid20-text" value="die"><input type="hidden" id="uid20-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid21')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid21">children</span></button></span><input type="hidden" class="uid21-text" value="Kinder"><input type="hidden" id="uid21-deco" value="children"> abzulenken.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid7" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid22" class="paratext-select"><option value="____" selected>____</option><option value="Es">Es</option><option value="Ihr">Ihr</option><option value="Du">Du</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option></select></span><input type="hidden" class="uid22-text" value="Sie"><input type="hidden" id="uid22-deco" value="____"> stellen 
-	<span class="signal-0 "><select id="uid23" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid23-text" value="den"><input type="hidden" id="uid23-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid24')"><span class="paratext-flip" id="uid24">children</span></button></span><input type="hidden" class="uid24-text" value="Kindern"><input type="hidden" id="uid24-deco" value="children"> abwechselnd 
-	<span class="signal-0 "><button onclick="paratext_flip('uid25')"><span class="paratext-flip" id="uid25">ask</span></button></span><input type="hidden" class="uid25-text" value="Fragen"><input type="hidden" id="uid25-deco" value="ask">.</p>
+<p><span class="signal-0 "><select id="uid22" class="paratext-select"
+		onchange="paratext_select('uid22');"><option value="____" selected>____</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option><option value="Ihr">Ihr</option><option value="Es">Es</option><option value="Du">Du</option></select></span><input type="hidden" class="uid22-text" value="Sie"><input type="hidden" id="uid22-deco" value="____"> stellen <span class="signal-0 "><select id="uid23" class="paratext-select"
+		onchange="paratext_select('uid23');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid23-text" value="den"><input type="hidden" id="uid23-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid24')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid24">children</span></button></span><input type="hidden" class="uid24-text" value="Kindern"><input type="hidden" id="uid24-deco" value="children"> abwechselnd <span class="signal-0 "><button onclick="paratext_flip('uid25')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid25">ask</span></button></span><input type="hidden" class="uid25-text" value="Fragen"><input type="hidden" id="uid25-deco" value="ask">.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid8" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Wer findet 
-	<span class="signal-0 "><select id="uid26" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid26-text" value="den"><input type="hidden" id="uid26-deco" value="____"> ersten 
-	<span class="signal-0 "><button onclick="paratext_flip('uid27')"><span class="paratext-flip" id="uid27">butterfly</span></button></span><input type="hidden" class="uid27-text" value="Schmetterling"><input type="hidden" id="uid27-deco" value="butterfly">?</p>
+<p>Wer findet <span class="signal-0 "><select id="uid26" class="paratext-select"
+		onchange="paratext_select('uid26');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid26-text" value="den"><input type="hidden" id="uid26-deco" value="____"> ersten <span class="signal-0 "><button onclick="paratext_flip('uid27')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid27">butterfly</span></button></span><input type="hidden" class="uid27-text" value="Schmetterling"><input type="hidden" id="uid27-deco" value="butterfly">?</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid9" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Wer 
-	<span class="signal-0 "><select id="uid28" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid28-text" value="die"><input type="hidden" id="uid28-deco" value="____"> erste 
-	<span class="signal-0 "><button onclick="paratext_flip('uid29')"><span class="paratext-flip" id="uid29">bee</span></button></span><input type="hidden" class="uid29-text" value="Biene"><input type="hidden" id="uid29-deco" value="bee">, 
-	<span class="signal-0 "><select id="uid30" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid30-text" value="die"><input type="hidden" id="uid30-deco" value="____"> nach 
-	<span class="signal-0 "><button onclick="paratext_flip('uid31')"><span class="paratext-flip" id="uid31">flowers</span></button></span><input type="hidden" class="uid31-text" value="Blumen"><input type="hidden" id="uid31-deco" value="flowers"> sucht?</p>
+<p>Wer <span class="signal-0 "><select id="uid28" class="paratext-select"
+		onchange="paratext_select('uid28');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid28-text" value="die"><input type="hidden" id="uid28-deco" value="____"> erste <span class="signal-0 "><button onclick="paratext_flip('uid29')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid29">bee</span></button></span><input type="hidden" class="uid29-text" value="Biene"><input type="hidden" id="uid29-deco" value="bee">, <span class="signal-0 "><select id="uid30" class="paratext-select"
+		onchange="paratext_select('uid30');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid30-text" value="die"><input type="hidden" id="uid30-deco" value="____"> nach <span class="signal-0 "><button onclick="paratext_flip('uid31')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid31">flowers</span></button></span><input type="hidden" class="uid31-text" value="Blumen"><input type="hidden" id="uid31-deco" value="flowers"> sucht?</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid10" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Wo ist 
-	<span class="signal-0 "><select id="uid32" class="paratext-select"><option value="____" selected>____</option><option value="eines">eines</option><option value="eine">eine</option><option value="einem">einem</option><option value="einer">einer</option><option value="ein">ein</option><option value="einen">einen</option></select></span><input type="hidden" class="uid32-text" value="eine"><input type="hidden" id="uid32-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid33')"><span class="paratext-flip" id="uid33">cat</span></button></span><input type="hidden" class="uid33-text" value="Katze"><input type="hidden" id="uid33-deco" value="cat">?</p>
+<p>Wo ist <span class="signal-0 "><select id="uid32" class="paratext-select"
+		onchange="paratext_select('uid32');"><option value="____" selected>____</option><option value="einen">einen</option><option value="eines">eines</option><option value="ein">ein</option><option value="einer">einer</option><option value="einem">einem</option><option value="eine">eine</option></select></span><input type="hidden" class="uid32-text" value="eine"><input type="hidden" id="uid32-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid33')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid33">cat</span></button></span><input type="hidden" class="uid33-text" value="Katze"><input type="hidden" id="uid33-deco" value="cat">?</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid11" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Wer sieht zuerst 
-	<span class="signal-0 "><select id="uid34" class="paratext-select"><option value="____" selected>____</option><option value="eines">eines</option><option value="eine">eine</option><option value="einem">einem</option><option value="einer">einer</option><option value="ein">ein</option><option value="einen">einen</option></select></span><input type="hidden" class="uid34-text" value="ein"><input type="hidden" id="uid34-deco" value="____"> rotes 
-	<span class="signal-0 "><button onclick="paratext_flip('uid35')"><span class="paratext-flip" id="uid35">automobile</span></button></span><input type="hidden" class="uid35-text" value="Auto"><input type="hidden" id="uid35-deco" value="automobile">?</p>
+<p>Wer sieht zuerst <span class="signal-0 "><select id="uid34" class="paratext-select"
+		onchange="paratext_select('uid34');"><option value="____" selected>____</option><option value="einen">einen</option><option value="eines">eines</option><option value="ein">ein</option><option value="einer">einer</option><option value="einem">einem</option><option value="eine">eine</option></select></span><input type="hidden" class="uid34-text" value="ein"><input type="hidden" id="uid34-deco" value="____"> rotes <span class="signal-0 "><button onclick="paratext_flip('uid35')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid35">automobile</span></button></span><input type="hidden" class="uid35-text" value="Auto"><input type="hidden" id="uid35-deco" value="automobile">?</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid12" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Emma und Philipp haben nun viel 
-	<span class="signal-0 "><button onclick="paratext_flip('uid36')"><span class="paratext-flip" id="uid36">fun</span></button></span><input type="hidden" class="uid36-text" value="Spaß"><input type="hidden" id="uid36-deco" value="fun"> und gewinnen abwechselnd 
-	<span class="signal-0 "><select id="uid37" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid37-text" value="die"><input type="hidden" id="uid37-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid38')"><span class="paratext-flip" id="uid38">search</span></button></span><input type="hidden" class="uid38-text" value="Suche"><input type="hidden" id="uid38-deco" value="search">.</p>
+<p>Emma und Philipp haben nun viel <span class="signal-0 "><button onclick="paratext_flip('uid36')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid36">fun</span></button></span><input type="hidden" class="uid36-text" value="Spaß"><input type="hidden" id="uid36-deco" value="fun"> und gewinnen abwechselnd <span class="signal-0 "><select id="uid37" class="paratext-select"
+		onchange="paratext_select('uid37');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid37-text" value="die"><input type="hidden" id="uid37-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid38')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid38">search</span></button></span><input type="hidden" class="uid38-text" value="Suche"><input type="hidden" id="uid38-deco" value="search">.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid13" style="display: none; opacity: 0;">
@@ -168,62 +146,52 @@ solved, the
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid14" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid39" class="paratext-select"><option value="____" selected>____</option><option value="Es">Es</option><option value="Ihr">Ihr</option><option value="Du">Du</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option></select></span><input type="hidden" class="uid39-text" value="Sie"><input type="hidden" id="uid39-deco" value="____"> riecht an 
-	<span class="signal-0 "><select id="uid40" class="paratext-select"><option value="____" selected>____</option><option value="eines">eines</option><option value="eine">eine</option><option value="einem">einem</option><option value="einer">einer</option><option value="ein">ein</option><option value="einen">einen</option></select></span><input type="hidden" class="uid40-text" value="einem"><input type="hidden" id="uid40-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid41')"><span class="paratext-flip" id="uid41">lilac bush</span></button></span><input type="hidden" class="uid41-text" value="Fliederstrauch"><input type="hidden" id="uid41-deco" value="lilac bush">.</p>
+<p><span class="signal-0 "><select id="uid39" class="paratext-select"
+		onchange="paratext_select('uid39');"><option value="____" selected>____</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option><option value="Ihr">Ihr</option><option value="Es">Es</option><option value="Du">Du</option></select></span><input type="hidden" class="uid39-text" value="Sie"><input type="hidden" id="uid39-deco" value="____"> riecht an <span class="signal-0 "><select id="uid40" class="paratext-select"
+		onchange="paratext_select('uid40');"><option value="____" selected>____</option><option value="einen">einen</option><option value="eines">eines</option><option value="ein">ein</option><option value="einer">einer</option><option value="einem">einem</option><option value="eine">eine</option></select></span><input type="hidden" class="uid40-text" value="einem"><input type="hidden" id="uid40-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid41')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid41">lilac bush</span></button></span><input type="hidden" class="uid41-text" value="Fliederstrauch"><input type="hidden" id="uid41-deco" value="lilac bush">.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid15" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid42" class="paratext-select"><option value="____" selected>____</option><option value="Es">Es</option><option value="Ihr">Ihr</option><option value="Du">Du</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option></select></span><input type="hidden" class="uid42-text" value="Er"><input type="hidden" id="uid42-deco" value="____"> riecht so toll.</p>
+<p><span class="signal-0 "><select id="uid42" class="paratext-select"
+		onchange="paratext_select('uid42');"><option value="____" selected>____</option><option value="Er">Er</option><option value="Sie">Sie</option><option value="Wir">Wir</option><option value="Ich">Ich</option><option value="Ihr">Ihr</option><option value="Es">Es</option><option value="Du">Du</option></select></span><input type="hidden" class="uid42-text" value="Er"><input type="hidden" id="uid42-deco" value="____"> riecht so toll.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid16" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid43" class="paratext-select"><option value="____" selected>____</option><option value="Unsere">Unsere</option><option value="Seine">Seine</option><option value="Meine">Meine</option><option value="Eure">Eure</option><option value="Deine">Deine</option><option value="Ihre">Ihre</option></select></span><input type="hidden" class="uid43-text" value="Ihre"><input type="hidden" id="uid43-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid44')"><span class="paratext-flip" id="uid44">mummy</span></button></span><input type="hidden" class="uid44-text" value="Mama"><input type="hidden" id="uid44-deco" value="mummy"> meint, ja, 
-	<span class="signal-0 "><select id="uid45" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid45-text" value="der"><input type="hidden" id="uid45-deco" value="____"> 
-	<span class="signal-0 "><input type="text" value="spring fragrance" id="uid46" class="paratext-input"
-		onkeyup="paratext_input_check(&#34;uid46&#34;)"
-		onfocus="paratext_input_focus(&#34;uid46&#34;)"
-		onblur="paratext_input_blur(&#34;uid46&#34;)"></span><input type="hidden" class="uid46-text" value="Frühlingsduft"><input type="hidden" id="uid46-deco" value="spring fragrance"> ist etwas ganz 
-	<span class="signal-0 "><button onclick="paratext_flip('uid47')"><span class="paratext-flip" id="uid47">special</span></button></span><input type="hidden" class="uid47-text" value="Besonderes"><input type="hidden" id="uid47-deco" value="special">.</p>
+<p><span class="signal-0 "><select id="uid43" class="paratext-select"
+		onchange="paratext_select('uid43');"><option value="____" selected>____</option><option value="Seine">Seine</option><option value="Deine">Deine</option><option value="Eure">Eure</option><option value="Ihre">Ihre</option><option value="Unsere">Unsere</option><option value="Meine">Meine</option></select></span><input type="hidden" class="uid43-text" value="Ihre"><input type="hidden" id="uid43-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid44')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid44">mummy</span></button></span><input type="hidden" class="uid44-text" value="Mama"><input type="hidden" id="uid44-deco" value="mummy"> meint, ja, <span class="signal-0 "><select id="uid45" class="paratext-select"
+		onchange="paratext_select('uid45');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid45-text" value="der"><input type="hidden" id="uid45-deco" value="____"> <span class="signal-0 "><input type="text" value="spring fragrance" id="uid46" class="paratext-input"
+		onkeyup="paratext_input_check('uid46')"
+		onfocus="paratext_input_focus('uid46')"
+		onblur="paratext_input_blur('uid46')"></span><input type="hidden" class="uid46-text" value="Frühlingsduft"><input type="hidden" id="uid46-deco" value="spring fragrance"> ist etwas ganz <span class="signal-0 "><button onclick="paratext_flip('uid47')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid47">special</span></button></span><input type="hidden" class="uid47-text" value="Besonderes"><input type="hidden" id="uid47-deco" value="special">.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid17" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid48" class="paratext-select"><option value="____" selected>____</option><option value="Dem">Dem</option><option value="Die">Die</option><option value="Das">Das</option><option value="Der">Der</option><option value="Den">Den</option><option value="Des">Des</option></select></span><input type="hidden" class="uid48-text" value="Die"><input type="hidden" id="uid48-deco" value="____"> 
-	<span class="signal-0 "><input type="text" value="flowers" id="uid49" class="paratext-input"
-		onkeyup="paratext_input_check(&#34;uid49&#34;)"
-		onfocus="paratext_input_focus(&#34;uid49&#34;)"
-		onblur="paratext_input_blur(&#34;uid49&#34;)"></span><input type="hidden" class="uid49-text" value="Blumen"><input type="hidden" id="uid49-deco" value="flowers"> blühen, 
-	<span class="signal-0 "><select id="uid50" class="paratext-select"><option value="____" selected>____</option><option value="dem">dem</option><option value="die">die</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="des">des</option></select></span><input type="hidden" class="uid50-text" value="die"><input type="hidden" id="uid50-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid51')"><span class="paratext-flip" id="uid51">shrubs</span></button></span><input type="hidden" class="uid51-text" value="Sträucher"><input type="hidden" id="uid51-deco" value="shrubs"> zeigen sich in 
-	<span class="signal-0 "><select id="uid52" class="paratext-select"><option value="____" selected>____</option><option value="seiner">seiner</option><option value="ihrer">ihrer</option><option value="euer">euer</option><option value="deiner">deiner</option><option value="meiner">meiner</option><option value="unser">unser</option></select></span><input type="hidden" class="uid52-text" value="ihrer"><input type="hidden" id="uid52-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid53')"><span class="paratext-flip" id="uid53">splendor</span></button></span><input type="hidden" class="uid53-text" value="Pracht"><input type="hidden" id="uid53-deco" value="splendor">.</p>
+<p><span class="signal-0 "><select id="uid48" class="paratext-select"
+		onchange="paratext_select('uid48');"><option value="____" selected>____</option><option value="Des">Des</option><option value="Das">Das</option><option value="Der">Der</option><option value="Den">Den</option><option value="Die">Die</option><option value="Dem">Dem</option></select></span><input type="hidden" class="uid48-text" value="Die"><input type="hidden" id="uid48-deco" value="____"> <span class="signal-0 "><input type="text" value="flowers" id="uid49" class="paratext-input"
+		onkeyup="paratext_input_check('uid49')"
+		onfocus="paratext_input_focus('uid49')"
+		onblur="paratext_input_blur('uid49')"></span><input type="hidden" class="uid49-text" value="Blumen"><input type="hidden" id="uid49-deco" value="flowers"> blühen, <span class="signal-0 "><select id="uid50" class="paratext-select"
+		onchange="paratext_select('uid50');"><option value="____" selected>____</option><option value="des">des</option><option value="das">das</option><option value="der">der</option><option value="den">den</option><option value="die">die</option><option value="dem">dem</option></select></span><input type="hidden" class="uid50-text" value="die"><input type="hidden" id="uid50-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid51')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid51">shrubs</span></button></span><input type="hidden" class="uid51-text" value="Sträucher"><input type="hidden" id="uid51-deco" value="shrubs"> zeigen sich in <span class="signal-0 "><select id="uid52" class="paratext-select"
+		onchange="paratext_select('uid52');"><option value="____" selected>____</option><option value="ihrer">ihrer</option><option value="seiner">seiner</option><option value="unser">unser</option><option value="euer">euer</option><option value="meiner">meiner</option><option value="deiner">deiner</option></select></span><input type="hidden" class="uid52-text" value="ihrer"><input type="hidden" id="uid52-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid53')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid53">splendor</span></button></span><input type="hidden" class="uid53-text" value="Pracht"><input type="hidden" id="uid53-deco" value="splendor">.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid18" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>Philipp findet 
-	<span class="signal-0 "><select id="uid54" class="paratext-select"><option value="____" selected>____</option><option value="eines">eines</option><option value="eine">eine</option><option value="einem">einem</option><option value="einer">einer</option><option value="ein">ein</option><option value="einen">einen</option></select></span><input type="hidden" class="uid54-text" value="ein"><input type="hidden" id="uid54-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid55')"><span class="paratext-flip" id="uid55">rosebush</span></button></span><input type="hidden" class="uid55-text" value="Rosenstrauch"><input type="hidden" id="uid55-deco" value="rosebush"> und gibt 
-	<span class="signal-0 "><select id="uid56" class="paratext-select"><option value="____" selected>____</option><option value="seiner">seiner</option><option value="ihrer">ihrer</option><option value="euer">euer</option><option value="deiner">deiner</option><option value="meiner">meiner</option><option value="unser">unser</option></select></span><input type="hidden" class="uid56-text" value="seiner"><input type="hidden" id="uid56-deco" value="____"> 
-	<span class="signal-0 "><button onclick="paratext_flip('uid57')"><span class="paratext-flip" id="uid57">mother</span></button></span><input type="hidden" class="uid57-text" value="Mutter"><input type="hidden" id="uid57-deco" value="mother"> recht.</p>
+<p>Philipp findet <span class="signal-0 "><select id="uid54" class="paratext-select"
+		onchange="paratext_select('uid54');"><option value="____" selected>____</option><option value="einen">einen</option><option value="eines">eines</option><option value="ein">ein</option><option value="einer">einer</option><option value="einem">einem</option><option value="eine">eine</option></select></span><input type="hidden" class="uid54-text" value="ein"><input type="hidden" id="uid54-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid55')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid55">rosebush</span></button></span><input type="hidden" class="uid55-text" value="Rosenstrauch"><input type="hidden" id="uid55-deco" value="rosebush"> und gibt <span class="signal-0 "><select id="uid56" class="paratext-select"
+		onchange="paratext_select('uid56');"><option value="____" selected>____</option><option value="ihrer">ihrer</option><option value="seiner">seiner</option><option value="unser">unser</option><option value="euer">euer</option><option value="meiner">meiner</option><option value="deiner">deiner</option></select></span><input type="hidden" class="uid56-text" value="seiner"><input type="hidden" id="uid56-deco" value="____"> <span class="signal-0 "><button onclick="paratext_flip('uid57')"><img alt="click" src="/click.png"><span class="paratext-flip" id="uid57">mother</span></button></span><input type="hidden" class="uid57-text" value="Mutter"><input type="hidden" id="uid57-deco" value="mother"> recht.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid19" style="display: none; opacity: 0;">
 <div style="text-align: left;">
-<p>
-	<span class="signal-0 "><select id="uid58" class="paratext-select"><option value="____" selected>____</option><option value="Dem">Dem</option><option value="Die">Die</option><option value="Das">Das</option><option value="Der">Der</option><option value="Den">Den</option><option value="Des">Des</option></select></span><input type="hidden" class="uid58-text" value="Der"><input type="hidden" id="uid58-deco" value="____"> 
-	<span class="signal-0 "><input type="text" value="spring fragrance" id="uid59" class="paratext-input"
-		onkeyup="paratext_input_check(&#34;uid59&#34;)"
-		onfocus="paratext_input_focus(&#34;uid59&#34;)"
-		onblur="paratext_input_blur(&#34;uid59&#34;)"></span><input type="hidden" class="uid59-text" value="Frühlingsduft"><input type="hidden" id="uid59-deco" value="spring fragrance"> ist wirklich sehr schön.</p>
+<p><span class="signal-0 "><select id="uid58" class="paratext-select"
+		onchange="paratext_select('uid58');"><option value="____" selected>____</option><option value="Des">Des</option><option value="Das">Das</option><option value="Der">Der</option><option value="Den">Den</option><option value="Die">Die</option><option value="Dem">Dem</option></select></span><input type="hidden" class="uid58-text" value="Der"><input type="hidden" id="uid58-deco" value="____"> <span class="signal-0 "><input type="text" value="spring fragrance" id="uid59" class="paratext-input"
+		onkeyup="paratext_input_check('uid59')"
+		onfocus="paratext_input_focus('uid59')"
+		onblur="paratext_input_blur('uid59')"></span><input type="hidden" class="uid59-text" value="Frühlingsduft"><input type="hidden" id="uid59-deco" value="spring fragrance"> ist wirklich sehr schön.</p>
 </div>
 </div>
 <div class="paratext-paragraph highlight-paragraph" id="pid20" style="display: none; opacity: 0;">

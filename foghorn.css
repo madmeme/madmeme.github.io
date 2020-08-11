@@ -2,22 +2,19 @@
 
 img {
 	max-width: 100%;
-}
-
+	}
 table {
 	width: 100%;
-}
-
+	margin-bottom: 2em;
+	}
 table, th, td {
 	padding: 5px;
-}
-
-
+	}
 html, body {
-        padding:1em;
-        margin:auto;
-        max-width:80vw;
-        background:#fefefe;
+	padding:1em;
+	margin:auto;
+	max-width:80vw;
+	background:#fefefe;
 	}
 body {
 	font: 1.3em "Vollkorn", Palatino, Times;

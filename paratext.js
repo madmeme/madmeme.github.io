@@ -4,7 +4,10 @@ var paratext_dt_fade = 1;
 var paratext_dt_flip = 5;
 var paratext_dt_signal = 3;
 var paratext_dt_enable = 3;
-var paratext_chscale = 1.0;
+var paratext_dt_skip = 1.5;
+var paratext_chscale = 8;
+var paratext_highlight_uid = undefined;
+var paratext_highlight_timer = undefined;
 
 ////////////////////////////////////////////////////////////////////////
 
@@ -50,25 +53,32 @@ function paratext_elem_user(elem)
 		}
 	});
 	$(elem).children("button").each((i,e) => {
-		text = text + $("#" + $(e).children("span").attr("id") + "-deco").val() + " ";
+		text = text + $("." + $(e).children("span").attr("id") + "-text").val() + " ";
 	});
 	return text.trim();
 }
 
-function paratext_elem_enable(enabled, found, elem)
+function paratext_elem_enable(enabled, found, elem, hint)
 {
 	if (found)
 	{
 		if (elem)
 		{
-			$(elem).removeClass("highlight-wrong");
+			$(elem).removeClass("highlight-wrong highlight-hint");
 		}
 	}
 	else
 	{
 		if (elem)
 		{
-			$(elem).addClass("highlight-wrong");
+			if (hint)
+			{
+				$(elem).addClass("highlight-hint");
+			}
+			else
+			{
+				$(elem).addClass("highlight-wrong");
+			}
 		}
 		return false;
 	}
@@ -82,27 +92,27 @@ function paratext_signals_enable(enabled, found, eids)
 		$(".signal-" + eids[i]).each((i,elem) => {
 			if ($(elem).hasClass("paratext-react"))
 			{
-				enabled = paratext_elem_enable(enabled, found, elem);
+				enabled = paratext_elem_enable(enabled, found, elem, true);
 			}
 			$(elem).children("select").each((i,e) => {
-				enabled = paratext_elem_enable(enabled, found, e);
+				enabled = paratext_elem_enable(enabled, found, e, true);
 			});
 			$(elem).children("input").each((i,e) => {
 				if ($(e).attr("type") == "checkbox")
 				{
-					enabled = paratext_elem_enable(enabled, found, $("#" + $(e).attr("id") + "-label"));
+					enabled = paratext_elem_enable(enabled, found, $("#" + $(e).attr("id") + "-label"), true);
 				}
 				else if ($(e).attr("type") == "radio")
 				{
-					enabled = paratext_elem_enable(enabled, found, $("#" + $(e).attr("id") + "-label"));
+					enabled = paratext_elem_enable(enabled, found, $("#" + $(e).attr("id") + "-label"), true);
 				}
 				else if ($(e).attr("type") == "text")
 				{
-					enabled = paratext_elem_enable(enabled, found, e);
+					enabled = paratext_elem_enable(enabled, found, e, true);
 				}
 			});
 			$(elem).children("button").each((i,e) => {
-				enabled = paratext_elem_enable(enabled, found, $(e).children("span"));
+				enabled = paratext_elem_enable(enabled, found, $(e).children("span"), true);
 			});
 		});
 	}
@@ -178,18 +188,17 @@ function paratext_paragraph_check(pid)
 			let f = $("#" + $(e).attr("id") + "-" + i);
 			if (f.children("option:selected").length > 0)
 			{
-				text = text + $(f).children("option:selected").val();
+				text = text + $(f).children("option:selected").val() + " ";
 			}
 			else
 			{
-				text = text + $(f).val();
+				text = text + $(f).val() + " ";
 			}
-			text = text + " ";
 		}
 		text = text.trim();
 		found = false;
 		$("." + $(e).attr("id") + "-text").each((j,f) =>{
-			if (text == $(f).val())
+			if (text == $(f).val().trim())
 			{
 				found = true;
 			}
@@ -215,7 +224,7 @@ function paratext_paragraph_check(pid)
 		let found = false;
 		for (i = 0; i < vids.length; i++)
 		{
-			if ($(vids[i]).val() == text)
+			if ($(vids[i]).val().trim() == text)
 			{
 				found = true;
 				$(e).html($(tids[i % tids.length]).val());
@@ -235,7 +244,7 @@ function paratext_paragraph_check(pid)
 		for (i = 0; i < eids.length; i++)
 		{
 			$(".signal-" + eids[i]).each((i,f) => {
-				let text = paratext_elem_user(f);
+				let text = paratext_elem_user(f).trim();
 				if (count[text] == undefined)
 				{
 					count[text] = 1;
@@ -279,11 +288,11 @@ function paratext_paragraph_check(pid)
 		for (i = 0; i < eids.length; i++)
 		{
 			$(".signal-" + eids[i]).each((i,f) => {
-				let text = paratext_elem_user(f);
+				let text = paratext_elem_user(f).trim();
 				let inside = false;
 				for (i = 0; i < vids.length; i++)
 				{
-					if ($(vids[i]).val() == text)
+					if ($(vids[i]).val().trim() == text)
 					{
 						inside = true;
 						break;
@@ -312,7 +321,7 @@ function paratext_paragraph_check(pid)
 		for (i = 0; i < eids.length; i++)
 		{
 			$(".signal-" + eids[i]).each((i,f) => {
-				let text = paratext_elem_user(f);
+				let text = paratext_elem_user(f).trim();
 				if (count[text] == undefined)
 				{
 					count[text] = 1;
@@ -335,7 +344,7 @@ function paratext_paragraph_check(pid)
 			let inside = false;
 			for (i = 0; i < vids.length; i++)
 			{
-				if ($(vids[i]).val() == text)
+				if ($(vids[i]).val().trim() == text)
 				{
 					inside = true;
 					break;
@@ -375,6 +384,7 @@ function paratext_paragraph_enable()
 	let enabled = true;
 	let lastp = undefined;
 	let count = 0;
+	let skip = false;
 	$(".paratext-paragraph").each((i,e) => {
 		if (all == false && count >= num && enabled == false)
 		{
@@ -418,66 +428,47 @@ function paratext_paragraph_enable()
 					});
 				}
 			}
-			$(e).css('display', 'block');
-			$(e).removeClass("ani-fadein ani-fadeout");
-			$(e).addClass("ani-fadein");
-			enabled = paratext_paragraph_check($(e).attr("id"));
-			lastp = e;
+			if (!skip)
+			{
+				if ($(e).css('display') == 'none')
+				{
+					skip = true;
+				}
+				$(e).css('display', 'block');
+				$(e).removeClass("ani-fadein ani-fadeout");
+				$(e).addClass("ani-fadein");
+				enabled = paratext_paragraph_check($(e).attr("id"));
+				lastp = e;
+			}
 		}
 		count = count + 1;
 	});
+	$(".paratext-select").each((i,e) => { paratext_select($(e).attr("id")); });
+	$(".paratext-input").each((i,e) => { paratext_input_check($(e).attr("id")); });
+	if (skip)
+	{
+		setTimeout(() => { paratext_paragraph_enable(); }, paratext_dt_skip*1000.0);
+	}
+	else
+	{
+		setTimeout(() => { paratext_paragraph_enable(); }, paratext_dt_enable*1000.0);
+	}
 }
 
 function paratext_paragraph_setup()
 {
-	setInterval(
-		() => {
-			paratext_paragraph_enable();
-		},
-		paratext_dt_enable*1000.0
-	);
-	$(".paratext-input").each((i,e) => {
-		let tlen = 0;
-		$("." + $(e).attr("id") + "-text").each((i,e) => {
-			tlen = $(e).val().length > tlen ? $(e).val().length : tlen;
-		});
-		let dlen = $("#" + $(e).attr("id") + "-deco").val().length;
-		let num = (tlen > dlen ? tlen : dlen) + 1;
-		$(e).css({"width": num*paratext_chscale + "ch"});
-	});
-	$(".paratext-flip").each((i,e) => {
-		let tlen = 0;
-		$("." + $(e).attr("id") + "-text").each((i,e) => {
-			tlen = $(e).val().length > tlen ? $(e).val().length : tlen;
-		});
-		let dlen = $("#" + $(e).attr("id")+ "-deco").val().length;
-		let num = (tlen > dlen ? tlen : dlen) + 1;
-		$(e).css({"width": num*paratext_chscale + "ch"});
-	});
-	$(".paratext-label").each((i,e) => {
-		let tlen = 0;
-		$("." + $(e).attr("id").replace("-label", "-text")).each((i,e) => {
-			tlen = $(e).val().length > tlen ? $(e).val().length : tlen;
-		});
-		let dlen = $("#" + $(e).attr("id").replace("-label", "-deco")).val().length;
-		let num = (tlen > dlen ? tlen : dlen) + 1;
-		$(e).css({"width": num*paratext_chscale + "ch"});
-	});
-	$(".paratext-react").each((i,e) => {
-		let tlen = 0;
-		$("." + $(e).attr("id") + "-text").each((i,e) => {
-			tlen = $(e).val().length > tlen ? $(e).val().length : tlen;
-		});
-		let dlen = $("#" + $(e).attr("id") + "-deco").val().length;
-		let num = (tlen > dlen ? tlen : dlen) + 1;
-		$(e).css({"width": num*paratext_chscale + "ch"});
-	});
+	setTimeout(() => { paratext_paragraph_enable(); }, paratext_dt_enable*1000.0);
 }
 
 ////////////////////////////////////////////////////////////////////////
 
 function paratext_highlight_on(uid)
 {
+	if (paratext_highlight_timer)
+	{
+		clearTimeout(paratext_highlight_timer);
+		paratext_highlight_off(paratext_highlight_uid);
+	}
 	let ids = $("#" + uid + "-signal").val().trim().split(" ");
 	let col = 1;
 	ids.forEach((id) => {
@@ -486,7 +477,8 @@ function paratext_highlight_on(uid)
 		});
 		col = col + 1;
 	});
-	setTimeout(() => {
+	paratext_highlight_uid = uid;
+	paratext_highlight_timer = setTimeout(() => {
 			paratext_highlight_off(uid)
 		},
 		paratext_dt_signal*1000.0
@@ -495,6 +487,7 @@ function paratext_highlight_on(uid)
 
 function paratext_highlight_off(uid)
 {
+	paratext_highlight_timer = undefined;
 	let ids = $("#" + uid + "-signal").val().trim().split(" ");
 	let col = 1;
 	ids.forEach((id) => {
@@ -516,18 +509,17 @@ function paratext_flip(uid)
 	text.each((i,e) => {
 		if ($(e).val() == flip.html())
 		{
-			j = (i + 1)%text.length;
+			j = i + 1;
 		}
 	});
-	if (flip.html() == deco.val())
+	if (j == text.length)
 	{
-		setTimeout(() => {
-				flip.html(deco.val());
-			},
-			paratext_dt_flip*1000.0
-		);
+		flip.html(deco.val());
 	}
-	flip.html($(text[j]).val());
+	else
+	{
+		flip.html($(text[j]).val());
+	}
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -535,7 +527,10 @@ function paratext_flip(uid)
 function paratext_input_check(uid)
 {
 	let inpu = $("#" + uid);
-	let text = $("." + uid + "-text");
+	let aux = $('<select/>').append($('<option/>').text(inpu.val()));
+	inpu.after(aux);
+	inpu.width(aux.width() + paratext_chscale);
+	aux.remove();
 }
 
 function paratext_input_focus(uid)
@@ -546,6 +541,10 @@ function paratext_input_focus(uid)
 	{
 		inpu.val("");
 	}
+	let aux = $('<select/>').append($('<option/>').text(inpu.val()));
+	inpu.after(aux);
+	inpu.width(aux.width() + paratext_chscale);
+	aux.remove();
 }
 
 function paratext_input_blur(uid)
@@ -556,22 +555,24 @@ function paratext_input_blur(uid)
 	{
 		inpu.val(deco.val())
 	}
+	let aux = $('<select/>').append($('<option/>').text(inpu.val()));
+	inpu.after(aux);
+	inpu.width(aux.width() + paratext_chscale);
+	aux.remove();
 }
 
 ////////////////////////////////////////////////////////////////////////
 
 function paratext_select(uid)
 {
+
 	let sele = $("#" + uid);
 	let vals = $("." + uid + "-vals");
-	let j = 0;
-	vals.each((i,e) => {
-		if ($(e).val() == sele.html())
-		{
-			j = (i + 1)%vals.length;
-		}
-	});
-	sele.html($(vals[j]).val());
+	let opti = sele.children('option:selected');
+	let aux = $('<select/>').append($('<option/>').text(opti.text()));
+	sele.after(aux);
+	sele.width(aux.width());
+	aux.remove();
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -592,13 +593,6 @@ function paratext_radio(uid)
 	let label = $("#" + uid + "-label");
 	let text = $("." + uid + "-text");
 	let deco = $("#" + uid + "-deco");
-	//~ $("." + radio.attr("name")).each((i,e) => {
-		//~ $(e).html($("#" + $(e).attr("id").replace("-label", "-deco")).val());
-	//~ });
-	//~ if (radio.prop("checked"))
-	//~ {
-		//~ label.html(text.val());
-	//~ }
 }
 
 ////////////////////////////////////////////////////////////////////////
