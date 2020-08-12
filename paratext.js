@@ -383,6 +383,7 @@ function paratext_paragraph_enable()
 	}
 	let enabled = true;
 	let lastp = undefined;
+	let thispid = undefined;
 	let count = 0;
 	let skip = false;
 	$(".paratext-paragraph").each((i,e) => {
@@ -437,12 +438,20 @@ function paratext_paragraph_enable()
 				$(e).css('display', 'block');
 				$(e).removeClass("ani-fadein ani-fadeout");
 				$(e).addClass("ani-fadein");
-				enabled = paratext_paragraph_check($(e).attr("id"));
+				thispid = $(e).attr("id");
+				enabled = paratext_paragraph_check(thispid);
 				lastp = e;
 			}
 		}
 		count = count + 1;
 	});
+	//~ let plist = $('#pid-list');
+	//~ if (plist && plist.hasClass("paratext-reveal"))
+	//~ {
+		//~ plist.removeClass('paratext-paragraph paratext-reveal ani-fadeout');
+		//~ plist.addClass('ani-fadein');
+		//~ plist.css('display', 'block');
+	//~ }
 	$(".paratext-select").each((i,e) => { paratext_select($(e).attr("id")); });
 	$(".paratext-input").each((i,e) => { paratext_input_check($(e).attr("id")); });
 	if (skip)
@@ -453,6 +462,8 @@ function paratext_paragraph_enable()
 	{
 		setTimeout(() => { paratext_paragraph_enable(); }, paratext_dt_enable*1000.0);
 	}
+	$(".highlight-hint").each((i,e) => { $(e).toggleClass("ani-glow-hint"); });
+	$(".highlight-wrong").each((i,e) => { $(e).toggleClass("ani-glow-wrong"); });
 }
 
 function paratext_paragraph_setup()
