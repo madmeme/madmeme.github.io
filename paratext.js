@@ -4,7 +4,7 @@ var paratext_dt_fade = 1;
 var paratext_dt_flip = 5;
 var paratext_dt_signal = 3;
 var paratext_dt_enable = 3;
-var paratext_dt_skip = 0.5;
+var paratext_dt_skip = 0.1;
 var paratext_chscale = 8;
 var paratext_highlight_uid = undefined;
 var paratext_highlight_timer = undefined;
@@ -208,6 +208,17 @@ function paratext_paragraph_check(pid)
 			let f = $("#" + $(e).attr("id") + "-" + i);
 			enabled = paratext_elem_enable(enabled, found, f);
 		}
+	});
+	$("#" + pid + " .paratext-show").each((i,e) => {
+		let eids = $("#" + $(e).attr("id") + "-elem").val().trim().split(" ");
+		text = "";
+		for (i = 0; i < eids.length; i++)
+		{
+			$(".signal-" + eids[i]).each((i,f) => {
+				text = text + paratext_elem_user(f) + " ";
+			});
+		}
+		$(e).html(text.trim());
 	});
 	$("#" + pid + " .paratext-react").each((i,e) => {
 		let eids = $("#" + $(e).attr("id") + "-elem").val().trim().split(" ");
