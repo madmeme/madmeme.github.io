@@ -54,6 +54,7 @@ body
 	text-indent: 1px;
 	overflow: visible;
 	min-width: 1rem;
+	font-size: inherit;
 }
 
 #content input[type="text"]
