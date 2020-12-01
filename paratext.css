@@ -133,6 +133,24 @@
 	-ms-animation:     key-opacity-fadeout ease-in-out 1s forwards;
 }
 
+.edit-fadein
+{
+	animation:         key-opacity-fadein ease-in-out 0.5s forwards;
+	-webkit-animation: key-opacity-fadein ease-in-out 0.5s forwards;
+	-moz-animation:    key-opacity-fadein ease-in-out 0.5s forwards;
+	-o-animation:      key-opacity-fadein ease-in-out 0.5s forwards;
+	-ms-animation:     key-opacity-fadein ease-in-out 0.5s forwards;
+}
+
+.edit-fadeout
+{
+	animation:         key-opacity-fadeout ease-in-out 0.5s forwards;
+	-webkit-animation: key-opacity-fadeout ease-in-out 0.5s forwards;
+	-moz-animation:    key-opacity-fadeout ease-in-out 0.5s forwards;
+	-o-animation:      key-opacity-fadeout ease-in-out 0.5s forwards;
+	-ms-animation:     key-opacity-fadeout ease-in-out 0.5s forwards;
+}
+
 @keyframes         key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
 @-moz-keyframes    key-opacity-fadein { from {opacity:0;} to {opacity:1;} }
 @-webkit-keyframes key-opacity-fadein { from {opacity:0;} to {opacity:1;} }

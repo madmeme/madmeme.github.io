@@ -98,9 +98,12 @@ function para_edit_show(elem_id)
 	else
 	{
 		para_edit_hide();
-		$("#para-edit-" + elem_id).css("display", "block");
+		let elem0 = $("#para-edit-" + elem_id);
 		let elem1 = $(".para-elem-" + elem_id);
 		let elem2 = $("#para-input-" + elem_id);
+		elem0.removeClass("edit-fadeout");
+		elem0.addClass("para-input edit-fadein");
+		elem0.css("display", "block");
 		elem1.addClass("para-focus");
 		if (elem2.length > 0)
 		{
@@ -115,6 +118,17 @@ function para_edit_show(elem_id)
 			elem2.focus();
 		}
 	}
+}
+
+////////////////////////////////////////////////////////////////////////
+
+function para_edit_hide()
+{
+	let elem = $(".para-input");
+	elem.addClass("edit-fadeout");
+	elem.removeClass("para-input");
+	setTimeout(() => { elem.css("display", "none"); }, 500.);
+	$(".para-focus").removeClass("para-focus");
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -166,14 +180,6 @@ function para_edit_select(elem_id, elem)
 	para_edit_hide();
 	$(".para-elem-" + elem_id).html($(elem).html());
 	para_graph_check(document.para_elem_grnum[elem_id]);
-}
-
-////////////////////////////////////////////////////////////////////////
-
-function para_edit_hide()
-{
-	$(".para-edit").css("display", "none");
-	$(".para-focus").removeClass("para-focus");
 }
 
 ////////////////////////////////////////////////////////////////////////
