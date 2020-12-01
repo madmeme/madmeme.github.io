@@ -1,8 +1,19 @@
+#content
+{
+	font-size: inherit;
+}
+
 #content th,
 #content td
 {
 	padding: 0.25rem;
 	text-align: center;
+}
+
+#content img[alt="emoji"]
+{
+	width: 1.5em;
+	vertical-align: text-bottom;
 }
 
 .para-edit
