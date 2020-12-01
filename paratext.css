@@ -1,3 +1,8 @@
+body
+{
+	font-size: 12pt;
+}
+
 #content
 {
 	font-size: inherit;
@@ -35,7 +40,18 @@
 	background-color: rgba(255, 255, 255, 1);
 }
 
-.para-edit button
+#para-font
+{
+	width: 100%;
+	text-align: right;
+	margin-bottom: 3em;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+
+.para-edit button,
+#para-font button
 {
 	border: 0;
 	border-radius: 0.33em;
@@ -52,10 +68,17 @@
 	box-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 1);
 }
 
-.para-edit button:hover
+.para-edit button:hover,
+#para-font button:hover
 {
 	background-color: lightyellow;
-	box-shadow: 0.2em 0.2em 0 rgba(0, 0, 0, 1);
+	box-shadow: 0.2em 0.2em 0 black;
+}
+
+.para-edit button:active,
+#para-font button:active
+{
+	box-shadow: 0.2em 0.2em 0 lightgrey;
 }
 
 .para-edit input
