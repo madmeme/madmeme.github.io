@@ -9,6 +9,30 @@ function para_umlaut(elem_id, text)
 
 ////////////////////////////////////////////////////////////////////////
 
+function para_fontsize_inc()
+{
+	document.para_fontsize += 0.01;
+	if (document.para_fontsize > 1.5)
+	{
+		document.para_fontsize = 1.5;
+	}
+	$("#content").css({"font-size" : document.para_fontsize + "em"});
+}
+
+////////////////////////////////////////////////////////////////////////
+
+function para_fontsize_dec()
+{
+	document.para_fontsize -= 0.01;
+	if (document.para_fontsize < 0.75)
+	{
+		document.para_fontsize = 0.75;
+	}
+	$("#content").css({"font-size" : document.para_fontsize + "em"});
+}
+
+////////////////////////////////////////////////////////////////////////
+
 function para_init()
 {
 	document.para_reveal = 0;
@@ -30,23 +54,72 @@ function para_init()
 	$(".para-edit").css("display", "none");
 	$(".para-graph").css("display", "none");
 	$("#para-graph-0").css("display", "block");
-	document.para_first = {}
+	document.para_fontsize = 1;	//< 3 valued init, no, yes elements
+	document.para_first = {};	//< 3 valued init, no, yes elements
 	para_graph_check(0);
 }
 
 ////////////////////////////////////////////////////////////////////////
 
-function para_flip(elem, texta, textb)
+function para_flip(that, texta, textb)
 {
-	$(elem).html(textb);
-	setTimeout(() => { $(elem).html(texta); }, 2000.);
+	let elem = $(that);
+	if (elem.hasClass("para-focus"))
+	{
+		return;
+	}
+	if (textb.length > 0)
+	{
+		elem.html(textb);
+	}
+	elem.addClass("para-focus");
+	setTimeout(() => {
+		elem.html(texta);
+		elem.removeClass("para-focus");
+	}, 2000.);
+}
+
+////////////////////////////////////////////////////////////////////////
+
+function para_signal(that, texta, textb, elems)
+{
+	let elem = $(that);
+	if (elem.hasClass("para-focus"))
+	{
+		return;
+	}
+	for (i in elems)
+	{
+		if (Number(i) == 0) continue;
+		let sig = $(".para-elem-" + elems[i]);
+		setTimeout(() => {
+			sig.addClass("para-highlight");
+			setTimeout(() => {
+				sig.removeClass("para-highlight");
+			}, 2000.);
+		}, 100.*Number(i));
+	}
+	if (textb.length > 0)
+	{
+		elem.html(textb);
+	}
+	elem.addClass("para-focus");
+	setTimeout(() => {
+		elem.html(texta);
+		elem.removeClass("para-focus");
+	}, elems.length*100. + 2000.);
 }
 
 ////////////////////////////////////////////////////////////////////////
 
 function para_elem_check(elem_id)
 {
-	return document.para_elem_check[elem_id]();
+	if (document.para_elem_check[elem_id])
+	{
+		return document.para_elem_check[elem_id]();
+	}
+	console.log("id has no func");
+	return true;
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -186,13 +259,16 @@ function para_edit_select(elem_id, elem)
 
 function para_rule_highlight(elem_id, result)
 {
+	let elem = $(".para-elem-" + elem_id);
 	if (result)
 	{
-		$(".para-elem-" + elem_id).removeClass("para-wrong");
+		elem.removeClass("para-wrong");
+		elem.addClass("para-right");
+		setTimeout(() => { elem.removeClass("para-right"); }, 2000.);
 	}
 	else
 	{
-		$(".para-elem-" + elem_id).addClass("para-wrong");
+		elem.addClass("para-wrong");
 	}
 }
 
@@ -200,38 +276,50 @@ function para_rule_highlight(elem_id, result)
 
 function para_rule_write(elem_id, result)
 {
+	// |init|no|yes
+	// |init,no|yes
+	// |init,no,yes
 	if (document.para_vals[elem_id] !== undefined)
 	{
 		let elem = $(".para-elem-" + elem_id);
-		if (document.para_first[elem_id] !== undefined)
+		let vals = document.para_vals[elem_id];
+		if (vals.length == 0)
+		{
+			elem.html("");
+		}
+		else if (vals.length == 1)
+		{
+			elem.html(vals[0]);
+		}
+		else if (document.para_first[elem_id] !== undefined)
 		{
 			if (result)
 			{
-				if (document.para_vals[elem_id][1])
+				if (vals[2])
 				{
-					elem.html(document.para_vals[elem_id][1]);
+					elem.html(vals[2]);
 				}
 				else
 				{
-					elem.html(document.para_vals[elem_id][0]);
+					elem.html(vals[1]);
 				}
 			}
 			else
 			{
-				if (document.para_vals[elem_id][2])
+				if (vals[2])
 				{
-					elem.html(document.para_vals[elem_id][2]);
+					elem.html(vals[1]);
 				}
 				else
 				{
-					elem.html(document.para_vals[elem_id][0]);
+					elem.html(vals[0]);
 				}
 			}
 		}
 		else
 		{
+			elem.html(vals[0]);
 			document.para_first[elem_id] = true;
-			elem.html(document.para_vals[elem_id][0]);
 		}
 	}
 }

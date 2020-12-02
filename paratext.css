@@ -5,7 +5,7 @@ body
 
 #content
 {
-	font-size: inherit;
+	font-size: 1em;
 }
 
 #content th,
@@ -75,9 +75,11 @@ body
 	box-shadow: 0.2em 0.2em 0 black;
 }
 
+.para-button:active,
 .para-edit button:active,
 #para-font button:active
 {
+	border-radius: 0.33em;
 	box-shadow: 0.2em 0.2em 0 lightgrey;
 }
 
@@ -116,12 +118,23 @@ body
 	padding-bottom: 0.1em;
 }
 
-.para-flip
+.para-highlight
+{
+	border: 0;
+	border-radius: 0.33em;
+	background-color: lightyellow;
+	box-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 1);
+	padding-bottom: 0.1em;
+}
+
+.para-flip,
+.para-signal
 {
 	font-style: italic !important;
 }
 
-.para-flip::after
+.para-flip::after,
+.para-signal::after
 {
 	background-image: url("click.png");
 	background-size: 1em 1em;
@@ -137,6 +150,7 @@ body
 	position: absolute;
 	text-align: right;
 	font-size: 0.66em;
+	color: lightgrey;
 	right: 3em;
 }
 
@@ -147,6 +161,15 @@ body
 	-moz-animation:    key-glow-wrong ease-in-out 2s infinite;
 	-o-animation:      key-glow-wrong ease-in-out 2s infinite;
 	-ms-animation:     key-glow-wrong ease-in-out 2s infinite;
+}
+
+.para-right
+{
+	animation:         key-glow-right ease-in-out 1s forwards;
+	-webkit-animation: key-glow-right ease-in-out 1s forwards;
+	-moz-animation:    key-glow-right ease-in-out 1s forwards;
+	-o-animation:      key-glow-right ease-in-out 1s forwards;
+	-ms-animation:     key-glow-right ease-in-out 1s forwards;
 }
 
 .ani-fadein
@@ -202,3 +225,9 @@ body
 @-webkit-keyframes key-glow-wrong { from {text-shadow:0 0 0.05em #000;} 50% {text-shadow:0 0 0.15em red;} to {text-shadow:0 0 0.05em #000;} }
 @-o-keyframes      key-glow-wrong { from {text-shadow:0 0 0.05em #000;} 50% {text-shadow:0 0 0.15em red;} to {text-shadow:0 0 0.05em #000;} }
 @-ms-keyframes     key-glow-wrong { from {text-shadow:0 0 0.05em #000;} 50% {text-shadow:0 0 0.15em red;} to {text-shadow:0 0 0.05em #000;} }
+
+@keyframes         key-glow-right { from {text-shadow:0 0 0.05em #000;} 10% {text-shadow:0 0 0.5em green;} to {text-shadow:none;} }
+@-moz-keyframes    key-glow-right { from {text-shadow:0 0 0.05em #000;} 10% {text-shadow:0 0 0.5em green;} to {text-shadow:none;} }
+@-webkit-keyframes key-glow-right { from {text-shadow:0 0 0.05em #000;} 10% {text-shadow:0 0 0.5em green;} to {text-shadow:none;} }
+@-o-keyframes      key-glow-right { from {text-shadow:0 0 0.05em #000;} 10% {text-shadow:0 0 0.5em green;} to {text-shadow:none;} }
+@-ms-keyframes     key-glow-right { from {text-shadow:0 0 0.05em #000;} 10% {text-shadow:0 0 0.5em green;} to {text-shadow:none;} }
