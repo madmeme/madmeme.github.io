@@ -3,11 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://madmeme.github.io/info/adjective/</loc>
+  </url>
+  
+  <url>
     <loc>https://madmeme.github.io/categories/</loc>
   </url>
   
   <url>
+    <loc>https://madmeme.github.io/info/grampers/</loc>
+  </url>
+  
+  <url>
+    <loc>https://madmeme.github.io/info/</loc>
+  </url>
+  
+  <url>
     <loc>https://madmeme.github.io/</loc>
+  </url>
+  
+  <url>
+    <loc>https://madmeme.github.io/info/noun/</loc>
   </url>
   
   <url>
@@ -16,6 +32,14 @@
   
   <url>
     <loc>https://madmeme.github.io/tags/</loc>
+  </url>
+  
+  <url>
+    <loc>https://madmeme.github.io/info/timeofday/</loc>
+  </url>
+  
+  <url>
+    <loc>https://madmeme.github.io/info/verb/</loc>
   </url>
   
 </urlset>
