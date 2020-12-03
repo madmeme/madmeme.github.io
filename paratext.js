@@ -1,5 +1,53 @@
 ////////////////////////////////////////////////////////////////////////
 
+function para_speak_flip()
+{
+	let elem1 = $("#para-speak-male");
+	let elem2 = $("#para-speak-female");
+	if (document.para_voice == "f")
+	{
+		document.para_voice = "m";
+		elem1.show();
+		elem2.hide();
+	}
+	else
+	{
+		document.para_voice = "f";
+		elem1.hide();
+		elem2.show();
+	}
+}
+
+////////////////////////////////////////////////////////////////////////
+
+function para_speak_text(text, voice)
+{
+	if (voice == "en")
+	{
+		if (document.para_voice === "f")
+		{
+			responsiveVoice.speak(text, "US English Female");
+		}
+		else
+		{
+			responsiveVoice.speak(text, "US English Male");
+		}
+	}
+	else if (voice == "de")
+	{
+		if (document.para_voice === "f")
+		{
+			responsiveVoice.speak(text, "Deutsch Female");
+		}
+		else
+		{
+			responsiveVoice.speak(text, "Deutsch Male");
+		}
+	}
+}
+
+////////////////////////////////////////////////////////////////////////
+
 function para_umlaut(elem_id, text)
 {
 	let elem = $("#para-input-" + elem_id);
@@ -51,10 +99,15 @@ function para_init()
 	Object.keys(document.para_vals).forEach(function(key) {
 		$(".para-elem-" + key).html(document.para_vals[key][0]);
 	});
-	$(".para-edit").css("display", "none");
-	$(".para-graph").css("display", "none");
-	$("#para-graph-0").css("display", "block");
-	document.para_fontsize = 1;	//< 3 valued init, no, yes elements
+	$(".para-edit").hide();
+	$(".para-speak-none").hide();
+	$(".para-graph").hide();
+	$(".para-hint").hide();
+	$("#para-graph-0").show();
+	$("#para-hint-0").show();
+	document.para_rec = new Recorder("para-rec");
+	document.para_fontsize = 1;
+	document.para_voice = "f";
 	document.para_first = {};	//< 3 valued init, no, yes elements
 	para_graph_check(0);
 }
@@ -132,13 +185,13 @@ function para_graph_check(graph_id)
 	{
 		if (graph_id >= document.para_reveal)
 		{
-			$("#para-info-" + graph_id).css("display", "none");
+			$("#para-hint-" + graph_id).hide();
 		}
-		$("#para-info-" + next_id).css("display", "block");
+		$("#para-hint-" + next_id).show();
 		let elem = $("#para-graph-" + next_id);
 		elem.removeClass("ani-fadein ani-fadeout");
 		elem.addClass("ani-fadein");
-		elem.css("display", "block");
+		elem.show();
 		if (next_id < document.para_elem_graph_num)
 		{
 			para_graph_check(next_id);
@@ -152,8 +205,8 @@ function para_graph_check(graph_id)
 			elem.removeClass("ani-fadein ani-fadeout");
 			elem.addClass("ani-fadeout");
 			setTimeout(((j) => {
-				$("#para-info-" + j).css("display", "none");
-				$("#para-elem-" + j).css("display", "none");
+				$("#para-hint-" + j).hide();
+				$("#para-elem-" + j).hide();
 			})(i), 2000.);
 		}
 	}
@@ -164,7 +217,7 @@ function para_graph_check(graph_id)
 
 function para_edit_show(elem_id)
 {
-	if ($("#para-edit-" + elem_id).css("display") != "none")
+	if ($("#para-edit-" + elem_id).is(":visible"))
 	{
 		para_edit_hide();
 	}
@@ -176,7 +229,7 @@ function para_edit_show(elem_id)
 		let elem2 = $("#para-input-" + elem_id);
 		elem0.removeClass("edit-fadeout");
 		elem0.addClass("para-input edit-fadein");
-		elem0.css("display", "block");
+		elem0.show();
 		elem1.addClass("para-focus");
 		if (elem2.length > 0)
 		{
@@ -200,7 +253,7 @@ function para_edit_hide()
 	let elem = $(".para-input");
 	elem.addClass("edit-fadeout");
 	elem.removeClass("para-input");
-	setTimeout(() => { elem.css("display", "none"); }, 500.);
+	setTimeout(() => { elem.hide(); }, 500.);
 	$(".para-focus").removeClass("para-focus");
 }
 

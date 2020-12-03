@@ -21,6 +21,13 @@ body
 	vertical-align: text-bottom;
 }
 
+.para-edit-close
+{
+	background-color: lightcoral !important;
+	position: absolute;
+	right: 3em;
+}
+
 .para-edit
 {
 	border: 2px solid lightgrey;
@@ -38,12 +45,7 @@ body
 	max-height: 33vh;
 	text-align: center;
 	background-color: rgba(255, 255, 255, 1);
-}
-
-.para-edit-close
-{
-	position: absolute;
-	right: 5em;
+	overflow: scroll;
 }
 
 .para-display
@@ -52,7 +54,7 @@ body
 	text-align: left;
 }
 
-#para-font
+#para-tools
 {
 	width: 100%;
 	text-align: right;
@@ -63,7 +65,8 @@ body
 }
 
 .para-edit button,
-#para-font button
+#para-tools button,
+#para-rec button
 {
 	border: 0;
 	border-radius: 0.33em;
@@ -81,7 +84,7 @@ body
 }
 
 .para-edit button:hover,
-#para-font button:hover
+#para-tools button:hover
 {
 	background-color: lightyellow;
 	box-shadow: 0.2em 0.2em 0 black;
@@ -89,10 +92,15 @@ body
 
 .para-button:active,
 .para-edit button:active,
-#para-font button:active
+#para-tools button:active
 {
 	border-radius: 0.33em;
 	box-shadow: 0.2em 0.2em 0 lightgrey;
+}
+
+#para-tools img
+{
+	width: 2em;
 }
 
 .para-edit input
@@ -108,6 +116,11 @@ body
 	margin: 0.2em;
 	background-color: honeydew;
 	box-shadow: 0.1em 0.1em 0 rgba(0, 0, 0, 1);
+}
+
+.para-speak img
+{
+	width: 1em;
 }
 
 .para-button
@@ -147,10 +160,19 @@ body
 }
 
 .para-flip::after,
-.para-signal::after,
-.para-info::after
+.para-signal::after
 {
 	background-image: url("click.png");
+	background-size: 1em 1em;
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	content: "";
+}
+
+.para-info::after
+{
+	background-image: url("light.png");
 	background-size: 1em 1em;
 	display: inline-block;
 	width: 1em;

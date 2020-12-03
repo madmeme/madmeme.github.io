@@ -11,8 +11,8 @@
 	<title>MadMeme - Home</title>
 	<script src="/jquery-3.5.1.min.js"></script>
 	<link rel="icon" href="/favicon.ico" type="image/png">
-	<link rel="stylesheet" href="/foghorn.css"><link rel="stylesheet" href="/paratext.css">
-	<script src="/paratext.js"></script>
+	<link rel="stylesheet" href="/paratext.css"><link rel="stylesheet" href="/foghorn.css">
+	<script src="/recorder.js"></script><script src="/paratext.js"></script>
 	
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174541776-1"></script>
 	<script><!--
@@ -24,7 +24,8 @@
 	
 </head>
 
-<body>
+<body onload="para_init();">
+
 <div id="header">
 	<h3 class="sitead">
 		<a href="http://madme.me/" class="logo">MadMeme</a>
@@ -47,6 +48,10 @@
 			
 		
 	
+		
+			
+		
+	
 	
 	
 	<p align="center">Choose a text to begin ...</p>
@@ -54,6 +59,18 @@
 		<tr>
 			<td valign="top" style="text-align: left;">
 				<ul style="list-style-type: none;">
+					
+						
+						
+						<li>
+							<a href="https://madmeme.github.io/declination/">❤&nbsp;<span style="color: black">Declination!</span></a>
+							
+								<p style="font-size: small; padding-left: 2em;">a</p>
+							
+							
+						</li>
+							
+						
 					
 						
 				</ul>
@@ -78,7 +95,26 @@
 	</table>
 	<p align="center">... enjoy reading ❤ learning.</p>
 
-	<div id="para-font">
+	<div id="para-tools">
+		<button id="para-rec-playbtn" style="display: none;"
+			onclick="document.para_rec.play();">
+			<img id="para-rec-play" src="/emoji/arrow_forward.png">
+		</button>
+		&nbsp;
+		<button id="para-rec-recbtn" onclick="document.para_rec.record();">
+			<img id="para-rec-mic"    src="/emoji/microphone.png">
+			<img id="para-rec-speaka" src="/emoji/clock3.png"  style="display: none;">
+			<img id="para-rec-speakb" src="/emoji/clock6.png"  style="display: none;">
+			<img id="para-rec-speakc" src="/emoji/clock9.png"  style="display: none;">
+			<img id="para-rec-speakd" src="/emoji/clock12.png" style="display: none;">
+			<img id="para-rec-loud"   src="/emoji/sound.png"   style="display: none;">
+		</button>
+		&nbsp;
+		<button onclick="para_speak_flip();">
+			<img id="para-speak-male"   src="/emoji/man.png" style="display:none;">
+			<img id="para-speak-female" src="/emoji/woman.png">
+		</button>
+		&nbsp;
 		<button onclick='para_fontsize_dec();'>aA<sup>-</sup></button>
 		&nbsp;
 		<button onclick='para_fontsize_inc();'>aA<sup>+</sup></button>
@@ -97,6 +133,8 @@
 	<a href="mailto:info@madme.me">Contact</a>
 	
 </div>
+
+<script src="https://code.responsivevoice.org/responsivevoice.js?key=saFzIQO1"></script>
 
 </body>
 
