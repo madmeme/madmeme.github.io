@@ -303,8 +303,11 @@ function para_edit_change(elem_id, input)
 
 function para_edit_select(elem_id, elem)
 {
-	para_edit_hide();
 	$(".para-elem-" + elem_id).html($(elem).html());
+	if (para_elem_check(elem_id))
+	{
+		para_edit_hide();
+	}
 	para_graph_check(document.para_elem_grnum[elem_id]);
 }
 
