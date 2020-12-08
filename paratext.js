@@ -20,9 +20,9 @@ function para_speak_flip()
 
 ////////////////////////////////////////////////////////////////////////
 
-function para_speak_text(text, voice)
+function para_speak_text(text, lang)
 {
-	if (voice == "en")
+	if (lang == "en")
 	{
 		if (document.para_voice === "f")
 		{
@@ -33,7 +33,7 @@ function para_speak_text(text, voice)
 			responsiveVoice.speak(text, "US English Male");
 		}
 	}
-	else if (voice == "de")
+	else if (lang == "de")
 	{
 		if (document.para_voice === "f")
 		{
@@ -44,6 +44,29 @@ function para_speak_text(text, voice)
 			responsiveVoice.speak(text, "Deutsch Male");
 		}
 	}
+}
+
+////////////////////////////////////////////////////////////////////////
+
+function para_speak_button(elem_id, text, lang, elems)
+{
+	let elem = $(".para-elem-" + elem_id);
+	elem.addClass("para-focus");
+	if (elems.length > 1)
+	{
+		let texts = [];
+		for (i in elems)
+		{
+			if (Number(i) == 0) continue;
+			texts.push($(".para-elem-" + elems[i]).html());
+		}
+		para_speak_text(texts.join(" "), lang);
+	}
+	else
+	{
+		para_speak_text(text, lang);
+	}
+	setTimeout(() => { elem.removeClass("para-focus"); }, 2000.);
 }
 
 ////////////////////////////////////////////////////////////////////////
