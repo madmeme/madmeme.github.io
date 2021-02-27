@@ -420,7 +420,16 @@ function para_rule_isin(elem_id, tabs)
 
 ////////////////////////////////////////////////////////////////////////
 
-function para_rule_const(elem_id, vals, tabs)
+function para_rule_const_imply(elem_id, vals, tabs)
+{
+	let elem = $(".para-elem-" + elem_id);
+	elem.html(vals[0]);
+	return true;
+}
+
+////////////////////////////////////////////////////////////////////////
+
+function para_rule_const_check(elem_id, vals, tabs)
 {
 	let text = $(".para-elem-" + elem_id).html();
 	if (vals[0].length > 0)

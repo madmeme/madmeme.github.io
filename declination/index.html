@@ -39,6 +39,18 @@
 <div id="content">
 	
 <div class="para-graph" id="para-graph-0">
+<h1 id="paulchen-">Paulchen &hellip;</h1>
+<h2 id="-geht-brötchen-holen">&hellip; geht Brötchen holen</h2>
+<p>Hallo Felix.</p>
+<p>Heute ist <button
+	class="para-button para-elem-field01"
+	onclick='para_edit_show(&#34;field01&#34;);'
+></button>
+ <span class="para-span para-elem-field02"></span>
+ Tag!</p>
+</div>
+<div class="para-graph" id="para-graph-1">
+<div class="para-pgnum">?<code>1</code></div>
 <h1 id="die-safeknacker">Die Safeknacker</h1>
 <p>Bob und Jim sind auf dem <button
 	class="para-button para-elem-a1"
@@ -51,33 +63,65 @@ Sie wollen den Safe der Zentralbank knacken und die
 letzten Goldreserven einheimsen.</p>
 <h2 id="der-ausritt">Der Ausritt</h2>
 <p>Reiten ist das <button
-	class="para-button para-elem-a1"
-	onclick='para_edit_show(&#34;a1&#34;);'
+	class="para-button para-elem-a2"
+	onclick='para_edit_show(&#34;a2&#34;);'
 ></button>
 , was es gibt.
 Da sind sich Bille und Lotta <button
-	class="para-button para-elem-b"
-	onclick='para_edit_show(&#34;b&#34;);'
+	class="para-button para-elem-b1"
+	onclick='para_edit_show(&#34;b1&#34;);'
 ></button>
  sicher.
 Deshalb fahren sie mit ihren Fahrrädern auf den Reiterhof und satteln ihre Pferde.</p>
 </div>
-<div class="para-graph" id="para-graph-1">
-<div class="para-pgnum">?<code>1</code></div>
+<div class="para-graph" id="para-graph-2">
+<div class="para-pgnum">?<code>2</code></div>
 <p>Sie möchten ausreiten und sich den Wind um die Nasen wehen lassen. Bille hat ein schwarzes Pferd, das Pferd von Lotta ist schwarz-weiß. Die Pferde sind schon aufgeregt, als sie die beiden Freundinnen entdecken, denn auch sie lieben es, wenn sie ausgeritten werden.</p>
 <p>Nachdem sie 30 Minuten geritten sind, gehen sie auf eine Wiese und machen eine Pause. Die Pferde fressen Gras und die Mädchen sammeln Blumen. Dann sieht Lotta einen kleinen Marienkäfer, der gerade an einem Grashalm hochlaufen möchte. Lotta ruft nach Bille und meint, nun haben sie Glück, denn Marienkäfer gelten als Glückskäfer.</p>
 <p>Der kleine Käfer läuft auf den Finger von Lotta, die Hand und dann den Arm hoch. Lotta kichert, weil es kitzelt. Dann fliegt der Käfer davon und sie reiten wieder zurück zum Reiterhof.</p>
 </div>
-<div id="para-edit-a1" class="para-edit" style="display: none;">
+<div id="para-edit-field01" class="para-edit" style="display: none;">
 	<button class="para-edit-close" onclick="para_edit_hide();">&#x2715;</button><span style="display: inline-block;">
-	<button onclick='para_edit_select(&#34;a1&#34;, this);'>schönste</button>
+	<button onclick='para_edit_select(&#34;field01&#34;, this);'>ein</button>
+	<button class="para-speak para-speak-none"
+	onclick='para_speak_text(&#34;ein&#34;, &#34;none&#34;);'><img src="/emoji/sound.png"></button>
+	</span><span style="display: inline-block;">
+	<button onclick='para_edit_select(&#34;field01&#34;, this);'>kein</button>
+	<button class="para-speak para-speak-none"
+	onclick='para_speak_text(&#34;kein&#34;, &#34;none&#34;);'><img src="/emoji/sound.png"></button>
+	</span></div>
+
+<div id="para-edit-a1" class="para-edit" style="display: none;">
+	<input
+		type="text"
+		id="para-input-a1"
+		onkeyup='para_edit_input(&#34;a1&#34;, this);'
+		onchange='para_edit_change(&#34;a1&#34;, this);'
+	>
+	<button
+		onclick='para_edit_change(&#34;a1&#34;, document.getElementById("para-input-a1"));'
+	>&#x23CE;</button>
+	<br>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&Auml;');">&Auml;</button>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&auml;');">&auml;</button>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&Ouml;');">&Ouml;</button>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&ouml;');">&ouml;</button>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&Uuml;');">&Uuml;</button>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&uuml;');">&uuml;</button>
+	<button onclick="para_umlaut(&#34;a1&#34;, '&szlig;');">&szlig;</button>
+
+</div>
+
+<div id="para-edit-a2" class="para-edit" style="display: none;">
+	<button class="para-edit-close" onclick="para_edit_hide();">&#x2715;</button><span style="display: inline-block;">
+	<button onclick='para_edit_select(&#34;a2&#34;, this);'>schönste</button>
 	<button class="para-speak para-speak-none"
 	onclick='para_speak_text(&#34;schönste&#34;, &#34;none&#34;);'><img src="/emoji/sound.png"></button>
 	</span></div>
 
-<div id="para-edit-b" class="para-edit" style="display: none;">
+<div id="para-edit-b1" class="para-edit" style="display: none;">
 	<button class="para-edit-close" onclick="para_edit_hide();">&#x2715;</button><span style="display: inline-block;">
-	<button onclick='para_edit_select(&#34;b&#34;, this);'>ganz</button>
+	<button onclick='para_edit_select(&#34;b1&#34;, this);'>ganz</button>
 	<button class="para-speak para-speak-none"
 	onclick='para_speak_text(&#34;ganz&#34;, &#34;none&#34;);'><img src="/emoji/sound.png"></button>
 	</span></div>
@@ -88,17 +132,28 @@ function para_check_init() {
 if (!document.para_elem_check) document.para_elem_check = {};
 if (!document.para_graph_check) document.para_graph_check = {};
 if (!document.para_elem_grnum) document.para_elem_grnum = {};
-document.para_elem_grnum['a1'] = Number(0);
-document.para_elem_grnum['b'] = Number(0);
-document.para_elem_check['a1'] = () => { return para_rule_const('a1', ['schönste'], ['']); };
-document.para_elem_check['b'] = () => { return para_rule_const('b', ['ganz'], ['']); };
+document.para_elem_grnum['field01'] = Number(0);
+document.para_elem_grnum['field02'] = Number(0);
+document.para_elem_check['field01'] = () => { return para_rule_const_check('field01', ['ein', 'kein'], ['']); };
+document.para_elem_check['field02'] = () => { return para_rule_map_imply('field02', ['field01'], '_uid1', ['_uid2']); };
 document.para_graph_check[0] = () => {
 let result = true;
-result = para_rule_const('a1', ['schönste'], ['']) && result;
-result = para_rule_const('b', ['ganz'], ['']) && result;
+result = para_rule_const_check('field01', ['ein', 'kein'], ['']) && result;
+result = para_rule_map_imply('field02', ['field01'], '_uid1', ['_uid2']) && result;
 return result;
 }
+document.para_elem_grnum['a1'] = Number(1);
+document.para_elem_grnum['a2'] = Number(1);
+document.para_elem_grnum['b1'] = Number(1);
+document.para_elem_check['a2'] = () => { return para_rule_const_check('a2', ['schönste'], ['']); };
+document.para_elem_check['b1'] = () => { return para_rule_const_check('b1', ['ganz'], ['']); };
 document.para_graph_check[1] = () => {
+let result = true;
+result = para_rule_const_check('a2', ['schönste'], ['']) && result;
+result = para_rule_const_check('b1', ['ganz'], ['']) && result;
+return result;
+}
+document.para_graph_check[2] = () => {
 let result = true;
 return result;
 }
@@ -108,14 +163,21 @@ if (!document.para_tabs) document.para_tabs = {};
 if (!document.para_lang) document.para_lang = {};
 document.para_tabs['ta'] = ['xx', '00', 'ee'];
 document.para_tabs['tb'] = ['yy', '11', 'ff'];
+document.para_tabs['_uid1'] = ['gewöhnlicher', 'schlechter'];
+document.para_tabs['_uid2'] = ['ein', 'kein'];
 document.para_lang['ta'] = 'none';
 document.para_lang['tb'] = 'none';
+document.para_lang['_uid1'] = 'none';
+document.para_lang['_uid2'] = 'none';
 }
 function para_vals_init() {
-document.para_elem_graph_num = Number(2);
+document.para_elem_graph_num = Number(3);
 if (!document.para_vals) document.para_vals = {};
-document.para_vals['a1'] = ['langweiligste'];
-document.para_vals['b'] = ['nicht'];
+document.para_vals['field01'] = ['eine'];
+document.para_vals['field02'] = ['schöne'];
+document.para_vals['a1'] = ['Weg'];
+document.para_vals['a2'] = ['langweiligste'];
+document.para_vals['b1'] = ['nicht'];
 }
 
 </script>
